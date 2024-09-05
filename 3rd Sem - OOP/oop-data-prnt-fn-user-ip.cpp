@@ -41,30 +41,30 @@ public:
       total += marks[i];
       sumPercent += (marks[i] / tmax[i]) * 100;
     }
-    
+
     avg = sumPercent / sub;
   }
 
-  void display()
+  void display(double total, double avg)
   {
-    double total;
-    double avg;
-    int sub;
-
     cout << endl;
     cout << "Name: " << name << endl;
-    compute(sub, total, avg);
     cout << "Total Marks Obtained: " << total << endl;
-    cout << "Average: " << avg << endl;
+    cout << "Average: " << avg << "%" << endl;
   }
 };
 
 int main()
 {
   int sub;
+  double total;
+  double avg;
+
   Exam student;
+
   student.assign(sub);
-  student.display();
+  student.compute(sub, total, avg);
+  student.display(total, avg);
 
   return 0;
 }

@@ -1,52 +1,59 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-void bubbleSort(int size, int array[size])
+void bubbleSort(int size, int array[])
 {
-  int count = 0;
+  int swap;
+
   for (int i = 0; i < size - 1; i++)
   {
+    swap = 0;
     for (int j = 0; j < size - i - 1; j++)
     {
-      count++; // Increment step count for each comparison
       if (array[j] > array[j + 1])
       {
         int temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
+        swap = 1;
       }
     }
+
+    if (!swap)
+    {
+      break;
+    }
   }
-  printf("Step count: %d\n", count);
 }
 
 int main()
 {
   int size;
-  printf("Enter the number of elements: ");
-  scanf("%d", &size);
+  cout << "Enter the number of elements: ";
+  cin >> size;
 
   int array[size];
-  printf("Enter %d elements:\n", size);
+  cout << "Enter " << size << " elements: ";
   for (int i = 0; i < size; i++)
   {
-    scanf("%d", &array[i]);
+    cin >> array[i];
   }
 
-  printf("Original array: ");
+  cout << "Original array: ";
   for (int i = 0; i < size; i++)
   {
-    printf("%d ", array[i]);
+    cout << array[i] << " ";
   }
-  printf("\n");
+  cout << endl;
 
   bubbleSort(size, array);
 
-  printf("Sorted array: ");
+  cout << "Sorted array: ";
   for (int i = 0; i < size; i++)
   {
-    printf("%d ", array[i]);
+    cout << array[i] << " ";
   }
-  printf("\n");
+  cout << endl;
 
   return 0;
 }

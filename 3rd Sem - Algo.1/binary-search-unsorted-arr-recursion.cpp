@@ -1,13 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int bubbleSort(int arr[], int size)
+int bubbleSort(int arr[], int size, int copy[])
 {
-  int swap;
-
   for (int i = 0; i < size - 1; i++)
   {
-    swap = 0;
     for (int j = 0; j < size - i - 1; j++)
     {
       if (arr[j] > arr[j + 1])
@@ -15,13 +12,11 @@ int bubbleSort(int arr[], int size)
         int temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
-        swap = 1;
-      }
-    }
 
-    if (!swap)
-    {
-      break;
+        int cpy = copy[j];
+        copy[j] = copy[j + 1];
+        copy[j + 1] = cpy;
+      }
     }
   }
 }
@@ -59,14 +54,16 @@ int main()
   cin >> size;
 
   int arr[size];
+  int copy[size];
 
+  cout << "Enter " << size << " Elements : ";
   for (int i = 0; i < size; i++)
   {
-    cout << "Element at " << i << ": ";
     cin >> arr[i];
+    copy[i] = i;
   }
 
-  bubbleSort(arr, size);
+  bubbleSort(arr, size, copy);
 
   cout << "Enter Element to search : ";
   cin >> n;
@@ -75,7 +72,7 @@ int main()
 
   if (result != -1)
   {
-    cout << "Element found at index : " << result << endl;
+    cout << "Element found @ index " << copy[result] << " of original Array"<<endl;
   }
 
   else

@@ -1,6 +1,7 @@
-//22-08-2024
+// 22-08-2024
 
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int binarySearch(int A[], int size, int target)
 {
@@ -28,28 +29,29 @@ int binarySearch(int A[], int size, int target)
 int main()
 {
   int size, n;
-  printf("Enter size of Array : ");
-  scanf("%d", &size);
+  cout << "Enter size of Array : ";
+  cin >> size;
 
   int A[size];
 
+  cout << "Enter Elements : ";
   for (int i = 0; i < size; i++)
   {
-    printf("Element at [%d] : ", i);
-    scanf("%d", &A[i]);
+    cin >> A[i];
   }
 
-  printf("Enter Element to search : ");
-  scanf("%d", &n);
+  cout << "Enter Element to search : ";
+  cin >> n;
   int result = binarySearch(A, size, n);
   if (result != -1)
   {
-    printf("Element found at index : %d\n", result);
+    cout << "Element found at index : " << result << endl;
   }
 
   else
   {
-    printf("Element not found\n");
+    cout << "Element not found" << endl;
   }
+
   return 0;
 }

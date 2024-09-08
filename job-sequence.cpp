@@ -12,8 +12,8 @@ void jobSequence(int job[], int profit[], int deadline[], int job_count)
     }
   }
 
-  int sequence[max_deadline];
-  for (int i = 0; i <= max_deadline; i++)
+  int sequence[max_deadline + 1];
+  for (int i = 1; i <= max_deadline; i++)
   {
     sequence[i] = -1;
   }
@@ -34,7 +34,7 @@ void jobSequence(int job[], int profit[], int deadline[], int job_count)
 
   cout << endl
        << "Job sequence for Maximum Profit: " << endl;
-       
+
   for (int i = 1; i <= max_deadline; i++)
   {
     if (sequence[i] != -1)

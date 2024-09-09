@@ -48,9 +48,11 @@ public:
   void display(double total, double avg)
   {
     cout << endl;
+    cin.ignore();
     cout << "Name: " << name << endl;
     cout << "Total Marks Obtained: " << total << endl;
     cout << "Average: " << avg << "%" << endl;
+    cout << endl;
   }
 };
 
@@ -60,11 +62,16 @@ int main()
   double total;
   double avg;
 
-  Exam student;
+  Exam s1;
+  Exam s2;
 
-  student.assign(sub);
-  student.compute(sub, total, avg);
-  student.display(total, avg);
+  s1.assign(sub);
+  s1.compute(sub, total, avg);
+  s1.display(total, avg);
+
+  s2.assign(sub);
+  s2.compute(sub, total, avg);
+  s2.display(total, avg);
 
   return 0;
 }

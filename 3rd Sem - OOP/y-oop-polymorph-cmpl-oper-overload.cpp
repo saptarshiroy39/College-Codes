@@ -14,14 +14,20 @@ public:
     imag = i;
   }
 
-  Complex operator+(Complex &obj)
-  {
-    return Complex(real + obj.real, imag + obj.imag);
+  Complex operator+(Complex &obj)                  // Also can be written as : 
+  {                                                          
+    double new_real = real + obj.real;             // Complex operator+(Complex &obj)
+    double new_imag = imag + obj.imag;             // {
+                                                   //   return Complex(real + obj.real, imag + obj.imag);
+    return Complex(new_real, new_imag);            // }
   }
 
-  Complex operator-(Complex &obj)
-  {
-    return Complex(real - obj.real, imag - obj.imag);
+  Complex operator-(Complex &obj)                  // Also can be written as : 
+  {                                                          
+    double new_real = real - obj.real;             // Complex operator-(Complex &obj)
+    double new_imag = imag - obj.imag;             // {
+                                                   //   return Complex(real - obj.real, imag - obj.imag);
+    return Complex(new_real, new_imag);            // }
   }
 
   void Display()

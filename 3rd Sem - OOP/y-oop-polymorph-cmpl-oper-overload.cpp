@@ -36,11 +36,11 @@ public:
 
     if (imag >= 0)
     {
-      cout << " + " << imag << "i";
+      cout << " + " << imag << "i" << endl;
     }
     else
     {
-      cout << " - " << -imag << "i";
+      cout << " - " << -imag << "i" << endl;
     }
   }
 };
@@ -69,8 +69,6 @@ int main()
 
   cout << "Addition result is : ";
   c4.Display();
-
-  cout << endl;
 
   cout << "Subtraction result is : ";
   c5.Display();

@@ -56,10 +56,10 @@ int main()
   Float f1(op1);
   Float f2(op2);
 
-  Float f3 = op1 + op2;
-  Float f4 = op1 - op2;
-  Float f5 = op1 * op2;
-  Float f6 = op1 / op2;
+  Float f3 = f1 + f2;
+  Float f4 = f1 + f2;
+  Float f5 = f1 + f2;
+  Float f6 = f1 + f2;
 
   cout << "Addition : " << op1 << " + " << op2 << " = ";
   f3.display();

@@ -14,10 +14,10 @@ public:
     top = -1;
   }
 
-  void getData()
+  void setData()
   {
-      cout << "Enter item to Push : ";
-      cin >> item;
+    cout << "Enter item to Push : ";
+    cin >> item;
   }
 
   void push()
@@ -29,7 +29,7 @@ public:
     }
     else
     {
-      getData();
+      setData();
       top++;
       array[top] = item;
     }
@@ -95,7 +95,7 @@ int main()
     case 3:
       s.display();
       break;
-      
+
     case 4:
       cout << "Exiting..." << endl;
       return 0;

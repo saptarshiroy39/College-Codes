@@ -15,28 +15,28 @@ public:
   {
     float new_operand = operand + obj.operand;
 
-    return new_operand;
+    return Float(new_operand);
   }
 
   Float operator-(Float &obj)
   {
     float new_operand = operand - obj.operand;
 
-    return new_operand;
+    return Float(new_operand);
   }
 
   Float operator*(Float &obj)
   {
     float new_operand = operand * obj.operand;
 
-    return new_operand;
+    return Float(new_operand);
   }
 
   Float operator/(Float &obj)
   {
     float new_operand = operand / obj.operand;
 
-    return new_operand;
+    return Float(new_operand);
   }
 
   void display()

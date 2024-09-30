@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "messege"
+git commit -m "message"
 
 git push

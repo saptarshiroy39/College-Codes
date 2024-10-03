@@ -58,7 +58,7 @@ ARCHITECTURE behavior OF DECODER_3x8_BS_vhd IS
 	PORT(
 		A : IN std_logic;
 		B : IN std_logic;
-    C : IN std_logic;          
+    C : IN std_logic;
 		D0 : OUT std_logic;
 		D1 : OUT std_logic;
 		D2 : OUT std_logic;

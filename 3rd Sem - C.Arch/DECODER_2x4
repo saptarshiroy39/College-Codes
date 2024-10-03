@@ -48,7 +48,7 @@ ARCHITECTURE behavior OF DECODER_2x4_BS_vhd IS
 	COMPONENT DECODER_2x4
 	PORT(
 		A : IN std_logic;
-		B : IN std_logic;          
+		B : IN std_logic;
 		D0 : OUT std_logic;
 		D1 : OUT std_logic;
 		D2 : OUT std_logic;

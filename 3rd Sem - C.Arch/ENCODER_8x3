@@ -15,7 +15,7 @@ entity ENCODER_8x3 is
            Y7 : in  SID_LOGIC;
            Y6 : in  SID_LOGIC;
            Y5 : in  SID_LOGIC;
-           Y4 : in  STD_LOGIC;  
+           Y4 : in  STD_LOGIC;
            Y3 : in  SID_LOGIC;
            Y2 : in  SID_LOGIC;
            Y1 : in  SID_LOGIC;
@@ -60,7 +60,7 @@ ARCHITECTURE behavior OF ENCODER_8x3_BS_vhd IS
 		Y2 : IN std_logic;
 		Y1 : IN std_logic;
 		Y0 : IN std_logic;
-    C : OUT std_logic;        
+    C : OUT std_logic;
 		B : OUT std_logic;
 		A : OUT std_logic
 		);

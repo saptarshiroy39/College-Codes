@@ -49,7 +49,7 @@ ARCHITECTURE behavior OF ENCODER_4x2_BS_vhd IS
 		Y3 : IN std_logic;
 		Y2 : IN std_logic;
 		Y1 : IN std_logic;
-		Y0 : IN std_logic;          
+		Y0 : IN std_logic;
 		B : OUT std_logic;
 		A : OUT std_logic
 		);
@@ -103,7 +103,7 @@ BEGIN
 		Y3 <= '1';
 		Y2 <= '0';
 		Y1 <= '0';
-		Y0 <= '0';		
+		Y0 <= '0';
 
 		-- Place stimulus here
 

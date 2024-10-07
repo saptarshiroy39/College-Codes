@@ -15,14 +15,14 @@ public:
     angle = a;
   }
 
-  Polar operator+(Polar &other)
+  Polar operator+(Polar &obj)
   {
     // Convert polar coordinates to Cartesian coordinates
     double x1 = radius * cos(angle);
-    double y1 = radius * sin(angle);
+    double x2 = obj.radius * cos(obj.angle);
 
-    double x2 = other.radius * cos(other.angle);
-    double y2 = other.radius * sin(other.angle);
+    double y1 = radius * sin(angle);
+    double y2 = obj.radius * sin(obj.angle);
 
     // Add Cartesian coordinates
     double x = x1 + x2;
@@ -38,7 +38,7 @@ public:
   void display()
   {
     cout << endl;
-    cout << "After Addition : " << "(" << radius << "," << angle << ")" << endl;
+    cout << "After Addition : (r,ϴ) = " << "(" << radius << "," << angle << ")" << endl;
   }
 };
 

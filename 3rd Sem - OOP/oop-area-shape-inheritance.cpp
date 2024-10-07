@@ -4,16 +4,16 @@ using namespace std;
 class Shape
 {
 protected:
-  int height;
-  int width;
+  double height;
+  double width;
 
 public:
-  void set_height(int h)
+  void set_height(double h)
   {
     height = h;
   }
 
-  void set_width(int w)
+  void set_width(double w)
   {
     width = w;
   }
@@ -22,7 +22,7 @@ public:
 class Rectangle : public Shape
 {
 public:
-  int get_area()
+  double get_area()
   {
     return (height * width);
   }
@@ -30,7 +30,8 @@ public:
 
 int main()
 {
-  int h, w;
+  double h;
+  double w;
 
   Rectangle r;
 

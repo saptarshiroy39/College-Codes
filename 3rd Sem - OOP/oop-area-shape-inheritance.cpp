@@ -4,18 +4,18 @@ using namespace std;
 class Shape
 {
 protected:
-  double height;
   double width;
+  double height;
 
 public:
-  void set_height(double h)
-  {
-    height = h;
-  }
-
   void set_width(double w)
   {
     width = w;
+  }
+
+  void set_height(double h)
+  {
+    height = h;
   }
 };
 
@@ -24,24 +24,24 @@ class Rectangle : public Shape
 public:
   double get_area()
   {
-    return (height * width);
+    return (width * height);
   }
 };
 
 int main()
 {
-  double h;
   double w;
+  double h;
 
   Rectangle r;
 
-  cout << "Enter the height : ";
-  cin >> h;
   cout << "Enter the width : ";
   cin >> w;
+  cout << "Enter the height : ";
+  cin >> h;
 
-  r.set_height(h);
   r.set_width(w);
+  r.set_height(h);
 
   cout << "Area : " << r.get_area();
 

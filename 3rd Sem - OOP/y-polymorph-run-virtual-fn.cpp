@@ -13,7 +13,7 @@ public:
 class Child : public Parent
 {
 public:
-  void sayHello()
+  void sayHello() override // writing "override" key word is optional
   {
     cout << "Hello from Child !" << endl;
   }

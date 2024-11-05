@@ -30,6 +30,7 @@ private:
 
 public:
   Bike(double m, double g) : milesDriven(m), gallonsUsed(g) {}
+
   double fuelEfficiency() override
   {
     return milesDriven / gallonsUsed;
@@ -57,7 +58,6 @@ int main()
   Bike b(bikeMiles, bikeGallons);
 
   cout << "Fuel efficiency of the Car: " << c.fuelEfficiency() << " mpg" << endl;
-  
   cout << "Fuel efficiency of the Bike: " << b.fuelEfficiency() << " mpg" << endl;
 
   return 0;

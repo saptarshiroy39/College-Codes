@@ -18,10 +18,12 @@ int main()
         break;
       }
     }
+    
     if (isPrime)
     {
       cout << j << " ";
     }
   }
+
   return 0;
 }

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class Complex
@@ -52,10 +51,14 @@ int main()
   cout << endl;
 
   if (C1 == C2)
+  {
     cout << "Both complex numbers are Equal.";
+  }
 
   else
+  {
     cout << "The complex numbers are Not Equal.";
+  }
 
   return 0;
 }

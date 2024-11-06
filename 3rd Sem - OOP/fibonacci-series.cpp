@@ -15,5 +15,6 @@ int main()
     b = c;
     cout << " " << c;
   }
+  
   return 0;
 }

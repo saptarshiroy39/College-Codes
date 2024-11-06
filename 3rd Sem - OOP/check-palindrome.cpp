@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
   int num, rev = 0, rem, ori;
@@ -20,5 +21,6 @@ int main()
   {
     cout << ori << " is NOT PALINDROME";
   }
+
   return 0;
 }

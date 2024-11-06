@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int isPrime(int num)
@@ -26,6 +25,7 @@ int isPrime(int num)
       return false;
     }
   }
+
   return true;
 }
 

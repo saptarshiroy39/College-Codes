@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
   int num, sum = 0, rem;
@@ -14,5 +15,6 @@ int main()
   }
 
   cout << "SUM = " << sum;
+
   return 0;
 }

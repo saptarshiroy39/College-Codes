@@ -83,5 +83,6 @@ int main()
     cin >> v.username;
     v.validateUsername(v.username);
   }
+  
   return 0;
 }

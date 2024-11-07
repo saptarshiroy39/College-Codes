@@ -30,6 +30,7 @@ void matrixChain(int p[], int n)
       }
     }
   }
+  
   printf("Minimum Cost of Multiplication: %d\n", m[1][n - 1]);
 }
 

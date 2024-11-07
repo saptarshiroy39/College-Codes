@@ -1,5 +1,3 @@
-// 22-08-2024
-
 #include <iostream>
 using namespace std;
 
@@ -23,6 +21,7 @@ int binarySearch(int A[], int size, int target)
       right = mid - 1;
     }
   }
+
   return -1;
 }
 
@@ -42,12 +41,13 @@ int main()
 
   cout << "Enter Element to search : ";
   cin >> n;
+
   int result = binarySearch(A, size, n);
+
   if (result != -1)
   {
     cout << "Element found at index : " << result << endl;
   }
-
   else
   {
     cout << "Element not found" << endl;

@@ -32,6 +32,7 @@ void matrixChain(int p[], int n)
       }
     }
   }
+  
   cout << "Minimum Cost of Multiplication: " << m[1][n - 1];
 }
 

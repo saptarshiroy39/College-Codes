@@ -1,14 +1,13 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 void merge(int arr[], int left, int mid, int right)
 {
   int n1 = mid - left + 1;
   int n2 = right - mid;
 
-  // Create temporary arrays
   int L[n1], R[n2];
 
-  // Copy data to temporary arrays L[] R[]
   for (int i = 0; i < n1; i++)
   {
     L[i] = arr[left + i];
@@ -18,10 +17,10 @@ void merge(int arr[], int left, int mid, int right)
     R[j] = arr[mid + 1 + j];
   }
 
-  // Merge the temporary arrays back into arr[left..right]
-  int i = 0;    // Initial index of 1st subarray
-  int j = 0;    // Initial index of 2nd subarray
-  int k = left; // Initial index of merged subarray
+  int i = 0;
+  int j = 0;
+  int k = left;
+
   while (i < n1 && j < n2)
   {
     if (L[i] <= R[j])
@@ -34,7 +33,6 @@ void merge(int arr[], int left, int mid, int right)
     }
   }
 
-  // Copy the remaining elements of L[], if any
   while (i < n1)
   {
     arr[k++] = L[i++];
@@ -50,14 +48,11 @@ void mergeSort(int arr[], int left, int right)
 {
   if (left < right)
   {
-    // Same as (left+right)/2, but avoids overflow for large left and right
     int mid = left + (right - left) / 2;
 
-    // sort 1st & 2nd halves
     mergeSort(arr, left, mid);
     mergeSort(arr, mid + 1, right);
 
-    // Merge the sorted halves
     merge(arr, left, mid, right);
   }
 }
@@ -65,23 +60,25 @@ void mergeSort(int arr[], int left, int right)
 int main()
 {
   int size;
-  printf("Write the length of array: ");
-  scanf("%d", &size);
+  cout << "Write the length of array: ";
+  cin >> size;
 
   int arr[size];
-
-  printf("Enter Elements : ");
+  cout << "Enter Elements: ";
   for (int i = 0; i < size; i++)
   {
-    scanf("%d", &arr[i]);
+    cout << i;
+    cin >> arr[i];
   }
 
   mergeSort(arr, 0, size - 1);
 
-  printf("Sorted array is: ");
+  cout << endl;
+
+  cout << "Sorted array is: " << endl;
   for (int i = 0; i < size; i++)
   {
-    printf("%d ", arr[i]);
+    cout << arr[i];
   }
 
   return 0;

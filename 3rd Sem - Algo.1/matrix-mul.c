@@ -1,5 +1,3 @@
-//22-08-2024
-
 #include <stdio.h>
 
 void matrixMul(int m, int n, int p, int q, int A[m][n], int B[p][q], int C[m][q])

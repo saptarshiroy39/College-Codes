@@ -58,20 +58,20 @@ int main()
   cout << "Enter size of the board (N): ";
   cin >> N;
 
-  for (int i = 0; i < N; ++i)
+  for (int i = 1; i <= N; i++)
   {
     col[i] = 0;
-    if (i < 2 * N)
+    
+    for (int i = 1; i <= N; i++)
     {
       LD[i] = 0;
       RD[i] = 0;
     }
-    board[i] = 0;
   }
 
   placeQueen(1);
 
   cout << "Total number of solutions: " << no_of_sol << endl;
-  
+
   return 0;
 }

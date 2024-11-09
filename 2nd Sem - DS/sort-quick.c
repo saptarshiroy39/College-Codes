@@ -19,7 +19,7 @@ int partition(int array[], int low, int high)
 
   // traverse each element of the array
   // compare them with the pivot
-  for (int j = low; j < high; j++) 
+  for (int j = low; j < high; j++)
   {
     if (array[j] <= pivot)
     {
@@ -55,37 +55,26 @@ void quickSort(int array[], int low, int high)
   }
 }
 
-// function to print array elements
-void printArray(int array[], int size)
-{
-  for (int i = 0; i < size; ++i)
-  {
-    printf("%d ", array[i]);
-  }
-  printf("\n");
-}
-
-// main function
 int main()
 {
   int i, size;
   printf("Write the size of array : ");
   scanf("%d", &size);
   int arr[size];
+
+  printf("Enter Elements : ");
   for (i = 0; i < size; i++)
   {
-    printf("element at %d = ", i);
     scanf("%d", &arr[i]);
   }
 
-  printf("Unsorted Array : \n");
-  printArray(arr, size);
-
-  // perform quicksort on data
   quickSort(arr, 0, size - 1);
 
-  printf("Sorted array in ascending order : \n");
-  printArray(arr, size);
+  printf("Sorted array : ");
+  for (i = 0; i < size; i++)
+  {
+    printf("%d ", arr[i]);
+  }
 
   return 0;
 }

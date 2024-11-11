@@ -24,7 +24,7 @@ int knapsack(int n, int m, int weights[], int profits[])
       }
       else
       {
-        v[i][j] = max(v[i - 1][j], v[i - 1][j - weights[i - 1]] + profits[i - 1]);
+        v[i][j] = (v[i - 1][j] > v[i - 1][j - weights[i - 1]] + profits[i - 1]) ? v[i - 1][j] : v[i - 1][j - weights[i - 1]] + profits[i - 1];
       }
     }
   }

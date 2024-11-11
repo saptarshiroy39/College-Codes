@@ -2,19 +2,10 @@
 using namespace std;
 
 #define INF 99
+#define MAX 10
 
-void floydWarshall(int n, int W[10][10])
+void floydWarshall(int n, int D[MAX][MAX])
 {
-  int D[10][10];
-
-  for (int i = 0; i < n; i++)
-  {
-    for (int j = 0; j < n; j++)
-    {
-      D[i][j] = W[i][j];
-    }
-  }
-
   for (int k = 0; k < n; k++)
   {
     for (int i = 0; i < n; i++)
@@ -30,6 +21,7 @@ void floydWarshall(int n, int W[10][10])
   }
 
   cout << "Shortest distances between every pair of vertices:\n";
+
   for (int i = 0; i < n; i++)
   {
     for (int j = 0; j < n; j++)
@@ -46,21 +38,21 @@ void floydWarshall(int n, int W[10][10])
 int main()
 {
   int n;
-  int W[10][10];
+  int D[MAX][MAX];
 
   cout << "Enter the number of vertices: ";
   cin >> n;
 
-  cout << "Enter the adjacency matrix (use 99999 for no path):\n";
+  cout << "Enter the adjacency matrix (use 99 for no path):\n";
   for (int i = 0; i < n; i++)
   {
     for (int j = 0; j < n; j++)
     {
-      cin >> W[i][j];
+      cin >> D[i][j];
     }
   }
 
-  floydWarshall(n, W);
+  floydWarshall(n, D);
 
   return 0;
 }

@@ -4,7 +4,7 @@ using namespace std;
 int findMax(int A[], int size)
 {
   int k = A[0];
-  for (int i = 1; i < size; i++)
+  for (int i = 0; i < size; i++)
   {
     if (A[i] > k)
     {

@@ -27,14 +27,14 @@ float fractionalKnapsack(int n, int W, int profit[], int weight[])
   // Sorting items in decreasing order of avg (profit/weight ratio)
   for (int i = 0; i < n - 1; i++)
   {
-    for (int j = i + 1; j < n; j++)
+    for (int j = 0; j < n - i - 1; j++)
     {
-      if (items[i].avg < items[j].avg)
+      if (items[j].avg < items[j + 1].avg)
       {
         // Swap the items
-        Item temp = items[i];
-        items[i] = items[j];
-        items[j] = temp;
+        Item temp = items[j];
+        items[j] = items[j + 1];
+        items[j + 1] = temp;
       }
     }
   }
@@ -49,8 +49,8 @@ float fractionalKnapsack(int n, int W, int profit[], int weight[])
     // If the weight of the current item is less than or equal to the remaining weight
     if (items[i].weight <= curWeight)
     {
-      curWeight -= items[i].weight;   // Deduct item weight from curWeight
       totalProfit += items[i].profit; // Add item profit to totalProfit
+      curWeight -= items[i].weight;   // Deduct item weight from curWeight
     }
     else
     {

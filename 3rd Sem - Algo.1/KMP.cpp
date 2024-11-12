@@ -2,9 +2,11 @@
 #include <string>
 using namespace std;
 
-void prefix_compute(const string &pattern, int *lps, int m)
+void prefix_compute(string pattern, int lps[], int m)
 {
-  int i = 1, len = 0;
+  int i = 1;
+  int len = 0;
+
   while (i < m)
   {
     if (pattern[len] == pattern[i])
@@ -25,10 +27,12 @@ void prefix_compute(const string &pattern, int *lps, int m)
   }
 }
 
-void compute_kmp(const string &text, const string &pattern)
+void compute_kmp(string text, string pattern)
 {
-  int n = text.length(), m = pattern.length();
-  int *lps = new int[m]; // Dynamic allocation for LPS array
+  int n = text.length();
+  int m = pattern.length();
+  
+  int lps [m];
   lps[0] = 0;            // First element of LPS is always 0
 
   // Compute the LPS array for the pattern
@@ -56,12 +60,10 @@ void compute_kmp(const string &text, const string &pattern)
     // If j reaches the length of the pattern, a match is found
     if (j == m)
     {
-      cout << "Pattern found at index " << i - j << endl; // Output the starting index of the match
+      cout << "Pattern found at index " << i - j << endl;
       j = lps[j - 1];                                     // Use LPS to continue searching for further matches
     }
   }
-
-  delete[] lps; // Free the dynamically allocated memory
 }
 
 int main()

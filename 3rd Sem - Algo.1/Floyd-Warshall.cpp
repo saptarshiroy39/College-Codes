@@ -27,9 +27,13 @@ void floydWarshall(int n, int D[MAX][MAX])
     for (int j = 0; j < n; j++)
     {
       if (D[i][j] == INF)
+      {
         cout << "INF ";
+      }
       else
+      {
         cout << D[i][j] << " ";
+      }
     }
     cout << endl;
   }

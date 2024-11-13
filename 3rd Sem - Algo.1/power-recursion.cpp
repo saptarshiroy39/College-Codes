@@ -24,5 +24,6 @@ int main()
 
   int result = power(num, p);
   cout << result;
+  
   return 0;
 }

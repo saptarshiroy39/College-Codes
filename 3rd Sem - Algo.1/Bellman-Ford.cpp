@@ -1,12 +1,10 @@
 #include <iostream>
 #include <climits>
-
 using namespace std;
 
 #define INF INT_MAX 
 #define NIL -1
 
-// Structure for an edge (u, v) with weight w
 struct Edge
 {
   int u, v, w;

@@ -1,12 +1,11 @@
 #include <iostream>
 #include <climits>
+using namespace std;
 
 #define WHITE 0
 #define GREY 1
 #define BLACK 2
 #define MAX 100
-
-using namespace std;
 
 class Graph
 {
@@ -85,7 +84,10 @@ public:
 
 void BFS(Graph &G, int start)
 {
-  int color[MAX], pi[MAX], d[MAX];
+  int color[MAX];
+  int pi[MAX];
+  int d[MAX];
+
   Queue q;
 
   for (int i = 0; i < G.vertex; i++)

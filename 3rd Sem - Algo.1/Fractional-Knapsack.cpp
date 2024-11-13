@@ -1,8 +1,6 @@
 #include <iostream>
-
 using namespace std;
 
-// Structure to represent an item
 struct Item
 {
   int profit;
@@ -31,7 +29,6 @@ float fractionalKnapsack(int n, int W, int profit[], int weight[])
     {
       if (items[j].avg < items[j + 1].avg)
       {
-        // Swap the items
         Item temp = items[j];
         items[j] = items[j + 1];
         items[j + 1] = temp;
@@ -39,7 +36,6 @@ float fractionalKnapsack(int n, int W, int profit[], int weight[])
     }
   }
 
-  // Initialize variables
   int curWeight = W;
   float totalProfit = 0.0;
 

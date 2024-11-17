@@ -110,7 +110,7 @@ void kruskalMST(Graph *graph)
   cout << "Edges in the Minimum Spanning Tree:\n";
   for (int i = 0; i < e; i++)
   {
-    cout << "(" << result[i].u << ", " << result[i].v << ") - Weight: " << result[i].weight << "\n";
+    cout << "(" << result[i].u << ", " << result[i].v << ") - Weight: " << result[i].weight << endl;
   }
 }
 

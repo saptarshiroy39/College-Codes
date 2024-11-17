@@ -53,8 +53,11 @@ void dijkstra(int graph[Max][Max], int V, int src)
   for (int i = 0; i < V - 1; i++)
   {
     int u = extract_min(dist, visited, V);
+
     if (u == -1)
+    {
       break; // All reachable nodes are processed
+    }
     visited[u] = true;
 
     for (int v = 0; v < V; v++)

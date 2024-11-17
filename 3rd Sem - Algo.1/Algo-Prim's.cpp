@@ -86,7 +86,7 @@ int main()
   cout << "Enter the number of edges: ";
   cin >> edges;
 
-  cout << "Enter edges with weights (format: src dest weight):" << endl;
+  cout << "Enter edges with weights (format: src dest weight):\n";
   for (int i = 0; i < edges; i++)
   {
     int src, dest, weight;
@@ -95,7 +95,7 @@ int main()
     graph[dest][src] = weight;
   }
 
-  cout << "Minimum Spanning Tree:" << endl;
+  cout << "Minimum Spanning Tree:\n";
   MST_PRIM(graph, vertices);
 
   return 0;

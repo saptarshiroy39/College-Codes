@@ -122,7 +122,8 @@ void BFS(Graph &G, int start)
 
 int main()
 {
-  int vertex, edge, u, v, start;
+  int vertex, edge,start;
+  int u,v;
 
   cout << "Enter the number of vertices: ";
   cin >> vertex;
@@ -136,6 +137,7 @@ int main()
   {
     cout << "Edge " << i + 1 << ": ";
     cin >> u >> v;
+    
     G.addEdge(u, v);
   }
 

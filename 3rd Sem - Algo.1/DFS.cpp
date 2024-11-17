@@ -11,23 +11,38 @@ int pi[MAX];
 int d[MAX];
 int f[MAX];
 int time;
-int adj[MAX][MAX]; // Adjacency matrix for representing the graph
-int V;             // Number of vertices
-int E;             // Number of edges
 
-void DFS_Visit(int u)
+class Graph
+{
+public:
+  int vertex;
+  int adj[MAX][MAX];
+
+  Graph(int v) : vertex(v)
+  {
+    for (int i = 0; i < vertex; i++)
+    {
+      for (int j = 0; j < vertex; j++)
+      {
+        adj[i][j] = 0;
+      }
+    }
+  }
+};
+
+void DFS_Visit(Graph &G, int u)
 {
   color[u] = GREY;
   d[u] = ++time;
 
-  for (int v = 0; v < V; v++)
+  for (int v = 0; v < G.vertex; v++)
   {
-    if (adj[u][v] == 1)
+    if (G.adj[u][v] == 1)
     { // If there's an edge from u to v
       if (color[v] == WHITE)
       {
         pi[v] = u;
-        DFS_Visit(v);
+        DFS_Visit(G, v);
       }
     }
   }
@@ -36,55 +51,52 @@ void DFS_Visit(int u)
   f[u] = ++time;
 }
 
-void DFS()
+void DFS(Graph &G)
 {
-  for (int i = 0; i < V; i++)
+  for (int i = 0; i < G.vertex; i++)
   {
     color[i] = WHITE;
     pi[i] = -1; // NIL is represented by -1
   }
+
   time = 0;
 
-  for (int u = 0; u < V; u++)
+  for (int u = 0; u < G.vertex; u++)
   {
     if (color[u] == WHITE)
     {
-      DFS_Visit(u);
+      DFS_Visit(G, u);
     }
   }
 }
 
 int main()
 {
+  int vertex,edge;
+  int u,v;
+
   cout << "Enter the number of vertices: ";
-  cin >> V;
+  cin >> vertex;
+  Graph G(vertex);
 
   cout << "Enter the number of edges: ";
-  cin >> E;
-
-  // Initialize the adjacency matrix with 0s
-  for (int i = 0; i < V; i++)
-  {
-    for (int j = 0; j < V; j++)
-    {
-      adj[i][j] = 0;
-    }
-  }
+  cin >> edge;
 
   // Input the edges
-  cout << "Enter each edge (u v) as a pair of space-separated vertices (0-based index):\n";
-  for (int i = 0; i < E; i++)
+  cout << "Enter edges (u v) for each edge:" << endl;
+  for (int i = 0; i < edge; i++)
   {
-    int u, v;
+    cout << "Edge "<< i+1 << ": ";
     cin >> u >> v;
-    adj[u][v] = 1; // Create a directed edge from u to v
+    
+    G.adj[u][v] = 1; // Create a directed edge from u to v
   }
 
-  DFS();
+  DFS(G);
 
   // Output discovery and finish times
   cout << "Vertex\tDiscovery\tFinish\n";
-  for (int i = 0; i < V; i++)
+  for (int i = 0; i < vertex; i++)
   {
     cout << i << "\t" << d[i] << "\t\t" << f[i] << "\n";
   }

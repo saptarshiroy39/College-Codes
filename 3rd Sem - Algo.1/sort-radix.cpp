@@ -66,6 +66,11 @@ void radixSort(int A[], int size)
     countingSort(A, size, div);
     div *= 10;
   }
+
+  for (int i = 0; i < size; i++)
+  {
+    cout << A[i] << " ";
+  }
 }
 
 int main()
@@ -84,12 +89,6 @@ int main()
 
   cout << "Sorted Array: ";
   radixSort(A, size);
-
-  for (int i = 0; i < size; i++)
-  {
-    cout << A[i] << " ";
-  }
-  cout << endl;
 
   return 0;
 }

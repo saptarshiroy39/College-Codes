@@ -43,7 +43,7 @@ int main()
   cin >> n;
 
   int p[n + 1];
-  cout << "Enter " << n+1 << " values of p-Array: ";
+  cout << "Enter " << n+1 << " dimensions: ";
 
   for (int i = 0; i < n + 1; i++)
   {

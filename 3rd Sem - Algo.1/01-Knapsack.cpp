@@ -36,9 +36,9 @@ int main()
 {
   int n, m;
 
-  cout << "Enter the number of items: ";
+  cout << "Enter number of items: ";
   cin >> n;
-  cout << "Enter the capacity of knapsack: ";
+  cout << "Enter capacity of knapsack: ";
   cin >> m;
 
   int weights[n], profits[n];

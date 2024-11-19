@@ -18,7 +18,7 @@ int lcs(char x[], char y[], int n, int m)
   {
     for (int j = 1; j <= m; ++j)
     {
-      if (x[i] == y[j])
+      if (x[i-1] == y[j-1])
       {
         dp[i][j] = dp[i - 1][j - 1] + 1;
       }
@@ -36,21 +36,21 @@ int main()
 {
   int n, m;
 
-  cout << "Enter the length of the first sequence: ";
+  cout << "Enter length of 1st sequence: ";
   cin >> n;
-  cout << "Enter the length of the second sequence: ";
+  cout << "Enter length of 2nd sequence: ";
   cin >> m;
 
-  char x[n + 1], y[m + 1];
+  char x[n], y[m];
 
   cout << "Enter the first sequence: ";
-  for (int i = 1; i <= n; ++i)
+  for (int i = 0; i < n; ++i)
   {
     cin >> x[i];
   }
 
   cout << "Enter the second sequence: ";
-  for (int i = 1; i <= m; ++i)
+  for (int i = 0; i < m; ++i)
   {
     cin >> y[i];
   }

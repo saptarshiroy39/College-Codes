@@ -20,7 +20,7 @@ void floydWarshall(int n, int D[MAX][MAX])
     }
   }
 
-  cout << "Shortest distances between every pair of vertices:\n";
+  cout << "\nShortest distances between every pair of vertices:\n";
 
   for (int i = 0; i < n; i++)
   {

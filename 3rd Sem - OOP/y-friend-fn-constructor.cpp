@@ -2,6 +2,7 @@
 using namespace std;
 
 class Mir;
+
 class Gian
 {
   int money;

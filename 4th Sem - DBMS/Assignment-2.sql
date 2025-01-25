@@ -30,9 +30,9 @@ ALTER TABLE Member_1431 ADD CONSTRAINT Penalty_Amount CHECK (Penalty_Amount <= 1
 --   Fees_Paid NUMBER(4),
 --   Max_Books_Allowed NUMBER(2),
 --   Penalty_Amount NUMBER(7,2),
---   CONSTRAINT chk_membership_type CHECK (Membership_Type IN ('Lifetime', 'Annual', 'HalfYearly', 'Quarterly')),
---   CONSTRAINT chk_max_books_allowed CHECK (Max_Books_Allowed < 7),
---   CONSTRAINT chk_penalty_amount CHECK (Penalty_Amount <= 1000)
+--   CONSTRAINT Membership_Type CHECK (Membership_Type IN ('Lifetime', 'Annual', 'HalfYearly', 'Quarterly')),
+--   CONSTRAINT Max_Books_Allowed CHECK (Max_Books_Allowed < 7),
+--   CONSTRAINT Penalty_Amount CHECK (Penalty_Amount <= 1000)
 -- );
 
 CREATE TABLE Books_1431
@@ -81,18 +81,18 @@ ALTER TABLE Issue_1431 ADD CONSTRAINT Member_Id_fk FOREIGN KEY (Member_Id) REFER
 --   Member_Id NUMBER(5),
 --   Issue_Date DATE,
 --   Return_Date DATE,
---   CONSTRAINT fk_Book FOREIGN KEY (Book_No) REFERENCES Books(Book_No),
---   CONSTRAINT fk_Member FOREIGN KEY (Member_Id) REFERENCES Members(Member_Id)
+--   CONSTRAINT Book_No_fk FOREIGN KEY (Book_No) REFERENCES Books_1431(Book_No),
+--   CONSTRAINT Member_Id_fk FOREIGN KEY (Member_Id) REFERENCES Member_1431(Member_Id)
 -- );
 
-INSERT INTO Member_1431 VALUES (1, 'Sayantan Sinha', 'Pune', TO_DATE('10-Dec-10', 'DD-Mon-YY'), 'Lifetime', 2000, 6, 50);
-INSERT INTO Member_1431 VALUES (2, 'Abhirup Sarkar', 'Kolkata', TO_DATE('19-Jan-11', 'DD-Mon-YY'), 'Annual', 1400, 3, 0);
-INSERT INTO Member_1431 VALUES (3, 'Ritesh Bhuniya', 'Gujarat', TO_DATE('20-Feb-11', 'DD-Mon-YY'), 'Quarterly', 350, 2, 100);
-INSERT INTO Member_1431 VALUES (4, 'Paresh Sen', 'Tripura', TO_DATE('21-Mar-11', 'DD-Mon-YY'), 'HalfYearly', 700, NULL, 200);
-INSERT INTO Member_1431 VALUES (5, 'Sohini Haldar', 'Birbhum', TO_DATE('11-Apr-11', 'DD-Mon-YY'), 'Lifetime', 2000, 6, 10);
-INSERT INTO Member_1431 VALUES (6, 'Supama Biswas', 'Kolkata', TO_DATE('12-Apr-11', 'DD-Mon-YY'), 'HalfYearly', 700, NULL, 0);
-INSERT INTO Member_1431 VALUES (7, 'Suranjana Basu', 'Purulia', TO_DATE('30-Jun-11', 'DD-Mon-YY'), 'Annual', 1400, 3, 50);
-INSERT INTO Member_1431 VALUES (8, 'Arpita Roy', 'Kolkata', TO_DATE('31-Jul-11', 'DD-Mon-YY'), 'HalfYearly', 700, NULL, 0);
+INSERT INTO Member_1431 VALUES (1, 'Sayantan Sinha', 'Pune', '10-Dec-10', 'Lifetime', 2000, 6, 50);
+INSERT INTO Member_1431 VALUES (2, 'Abhirup Sarkar', 'Kolkata', '19-Jan-11', 'Annual', 1400, 3, 0);
+INSERT INTO Member_1431 VALUES (3, 'Ritesh Bhuniya', 'Gujarat', '20-Feb-11', 'Quarterly', 350, 2, 100);
+INSERT INTO Member_1431 VALUES (4, 'Paresh Sen', 'Tripura', '21-Mar-11', 'HalfYearly', 700, 1, 200);
+INSERT INTO Member_1431 VALUES (5, 'Sohini Haldar', 'Birbhum', '11-Apr-11', 'Lifetime', 2000, 6, 10);
+INSERT INTO Member_1431 VALUES (6, 'Supama Biswas', 'Kolkata', '12-Apr-11', 'HalfYearly', 700, 1, 0);
+INSERT INTO Member_1431 VALUES (7, 'Suranjana Basu', 'Purulia', '30-Jun-11', 'Annual', 1400, 3, 50);
+INSERT INTO Member_1431 VALUES (8, 'Arpita Roy', 'Kolkata', '31-Jul-11', 'HalfYearly', 700, 1, 0);
 
 INSERT INTO Books_1431 VALUES (101, 'Let us C', 'Denis Ritchie', 450, 'Others');
 INSERT INTO Books_1431 VALUES (102, 'Oracle - Complete Ref', 'Loni', 550, 'Database');
@@ -103,10 +103,10 @@ INSERT INTO Books_1431 VALUES (106, 'UNIX', 'Sumitava Das', 300, 'System');
 INSERT INTO Books_1431 VALUES (107, 'Optics', 'Ghatak', 600, 'Science');
 INSERT INTO Books_1431 VALUES (108, 'Data Structure', 'G.S. Baluja', 350, 'Others');
 
-INSERT INTO Issue_1431 VALUES (7001, 101, NULL, TO_DATE('10-Jan-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7002, 102, 2, TO_DATE('25-Jan-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7003, 104, NULL, TO_DATE('01-Feb-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7004, 104, 2, TO_DATE('15-Mar-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7005, 101, 4, TO_DATE('04-Apr-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7006, 108, 5, TO_DATE('12-Apr-11', 'DD-Mon-YY'), NULL);
-INSERT INTO Issue_1431 VALUES (7007, 101, 8, TO_DATE('01-Aug-11', 'DD-Mon-YY'), NULL);
+INSERT INTO Issue_1431 VALUES (7001, 101, 1, '10-Jan-11', NULL);
+INSERT INTO Issue_1431 VALUES (7002, 102, 2, '25-Jan-11', NULL);
+INSERT INTO Issue_1431 VALUES (7003, 104, 1, '01-Feb-11', NULL);
+INSERT INTO Issue_1431 VALUES (7004, 104, 2, '15-Mar-11', NULL);
+INSERT INTO Issue_1431 VALUES (7005, 101, 4, '04-Apr-11', NULL);
+INSERT INTO Issue_1431 VALUES (7006, 108, 5, '12-Apr-11', NULL);
+INSERT INTO Issue_1431 VALUES (7007, 101, 8, '01-Aug-11', NULL);

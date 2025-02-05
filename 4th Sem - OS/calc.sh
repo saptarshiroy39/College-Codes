@@ -9,4 +9,4 @@ case $op in
   3) res=$(($a * $b));;
   4) res=$(($a / $b));;
 esac
-echo
+echo "Result: $res"

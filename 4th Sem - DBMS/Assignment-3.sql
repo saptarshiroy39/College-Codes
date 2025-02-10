@@ -41,3 +41,34 @@ SELECT Member_Name, Member_Id FROM Member_1431 WHERE (Member_Name LIKE 'S%' OR M
 
 -- List all the books that contain the word 'SQL' in the name of the book
 SELECT Book_Name, Author_Name FROM Books_1431 WHERE Book_Name LIKE '%SQL%';
+
+-- How many books are available whose cost is greater than 350
+SELECT COUNT(*) FROM Books_1431 WHERE Cost > 350;
+
+-- How many different Authors' names are available in the BOOKS table
+SELECT COUNT(DISTINCT Author_Name) FROM Books_1431;
+
+-- Calculate the following Numeric functions
+-- What is the absolute value of -167
+SELECT ABS(-167) FROM DUAL;
+
+-- Calculate 8^6
+SELECT POWER(8,6);
+
+-- Round up to 2 decimal points (134.56789)
+SELECT ROUND(134.56789,2);
+
+-- What is the square root of 144
+SELECT SQRT(144);
+
+-- Floor and Ceil value of 13.15
+SELECT FLOOR(13.15), CEIL(13.15);
+
+-- Extract Year, Month, Day from System Table
+SELECT EXTRACT(YEAR FROM SYSDATE), EXTRACT(MONTH FROM SYSDATE), EXTRACT(DAY FROM SYSDATE);
+
+-- What is the greatest value among 4, 5 and 17
+SELECT GREATEST(4,5,17);
+
+-- What is the least value among 4, 5 and 17 and Express why resulting value of last two queries are same
+SELECT LEAST(4,5,17);

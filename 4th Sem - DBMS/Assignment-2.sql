@@ -1,4 +1,4 @@
--- Create a table “Member” with the following structure
+-- Create a table "Member" with the following structure
 CREATE TABLE Member_1431
 (
   Member_Id NUMBER(5),
@@ -41,7 +41,7 @@ ALTER TABLE Member_1431 ADD CONSTRAINT Penalty_Amount CHECK (Penalty_Amount <= 1
 --   CONSTRAINT Penalty_Amount CHECK (Penalty_Amount <= 1000)
 -- );
 
--- Create a table “Books” with the following structure
+-- Create a table "Books" with the following structure
 CREATE TABLE Books_1431
 (
   Book_No NUMBER(6),
@@ -69,7 +69,7 @@ ALTER TABLE Books_1431 ADD CONSTRAINT Category CHECK (Category IN ('Science', 'D
 --   Category CHAR(10) CHECK (Category IN ('Science', 'Database', 'System', 'Others'))
 -- );
 
--- Create a table “Issue” with the following structure
+-- Create a table "Issue" with the following structure
 CREATE TABLE Issue_1431
 (
   Lib_Issue_Id NUMBER(10),
@@ -99,7 +99,7 @@ ALTER TABLE Issue_1431 ADD CONSTRAINT Member_Id_fk FOREIGN KEY (Member_Id) REFER
 --   CONSTRAINT Member_Id_fk FOREIGN KEY (Member_Id) REFERENCES Member_1431(Member_Id)
 -- );
 
--- Insert the following data into the Member table
+-- Insert the following data into the "Member" table
 INSERT INTO Member_1431 VALUES (1, 'Sayantan Sinha', 'Pune', '10-Dec-10', 'Lifetime', 2000, 6, 50);
 INSERT INTO Member_1431 VALUES (2, 'Abhirup Sarkar', 'Kolkata', '19-Jan-11', 'Annual', 1400, 3, 0);
 INSERT INTO Member_1431 VALUES (3, 'Ritesh Bhuniya', 'Gujarat', '20-Feb-11', 'Quarterly', 350, 2, 100);
@@ -109,7 +109,7 @@ INSERT INTO Member_1431 VALUES (6, 'Supama Biswas', 'Kolkata', '12-Apr-11', 'Hal
 INSERT INTO Member_1431 VALUES (7, 'Suranjana Basu', 'Purulia', '30-Jun-11', 'Annual', 1400, 3, 50);
 INSERT INTO Member_1431 VALUES (8, 'Arpita Roy', 'Kolkata', '31-Jul-11', 'HalfYearly', 700, 1, 0);
 
--- Insert the following data into the Books table
+-- Insert the following data into the "Books" table
 INSERT INTO Books_1431 VALUES (101, 'Let us C', 'Denis Ritchie', 450, 'Others');
 INSERT INTO Books_1431 VALUES (102, 'Oracle - Complete Ref', 'Loni', 550, 'Database');
 INSERT INTO Books_1431 VALUES (103, 'Visual Basic 10', 'BPB', 700, 'Others');
@@ -119,7 +119,7 @@ INSERT INTO Books_1431 VALUES (106, 'UNIX', 'Sumitava Das', 300, 'System');
 INSERT INTO Books_1431 VALUES (107, 'Optics', 'Ghatak', 600, 'Science');
 INSERT INTO Books_1431 VALUES (108, 'Data Structure', 'G.S. Baluja', 350, 'Others');
 
--- Insert the following data into the Issue table
+-- Insert the following data into the "Issue" table
 INSERT INTO Issue_1431 VALUES (7001, 101, 1, '10-Jan-11', NULL);
 INSERT INTO Issue_1431 VALUES (7002, 102, 2, '25-Jan-11', NULL);
 INSERT INTO Issue_1431 VALUES (7003, 104, 1, '01-Feb-11', NULL);

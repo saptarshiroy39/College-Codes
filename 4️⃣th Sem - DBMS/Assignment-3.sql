@@ -93,7 +93,7 @@ SELECT Book_Name FROM Books_1431 WHERE Cost BETWEEN 300 AND 500;
 SELECT Member_Name FROM Member_1431 WHERE Membership_Type = 'HalfYearly';
 
 -- List the Name of the Members who open their accounts in the year 2011
-SELECT Member_Name FROM Member_1433 WHERE EXTRACT(YEAR FROM Ace_Open_Date)=2011;
+SELECT Member_Name FROM Member_1431 WHERE EXTRACT(YEAR FROM Ace_Open_Date)=2011;
 --SELECT Member_Name FROM Member_1431 WHERE Ace_Open_Date LIKE '%11';
 
 -- Retrieve the Penalty Amount of the Members who has taken the book "LET US C"
@@ -118,10 +118,12 @@ SELECT * FROM Issue_1431 WHERE Return_Date IS NULL;
 SELECT Book_Name FROM Books_1431 WHERE Category IN ('Science', 'Database');
 
 -- List all the Members in the descending order of Penalty due on them
-SELECT * FROM Member_1431 ORDER BY Penalty_Due DESC;
+SELECT Member_Name, Penalty_Amount FROM Member_1431 WHERE Penalty_Amount > 0 ORDER BY Penalty_Amount DESC;
 
 -- List all the Books in ascending order of category and descending order of price
-SELECT * FROM Books_1431 ORDER BY Category ASC, Cost DESC;
+SELECT Book_Name, Category FROM Books_1431 ORDER BY Category ASC;
+
+SELECT Book_Name, Cost FROM Books_1431 ORDER BY Cost DESC;
 
 -- List the Entire Book name in INIT CAP and Author Name in UPPER case in the descending order of the Book Name
 SELECT INITCAP(Book_Name), UPPER(Author_Name) FROM Books_1431 ORDER BY Book_Name DESC;
@@ -130,4 +132,4 @@ SELECT INITCAP(Book_Name), UPPER(Author_Name) FROM Books_1431 ORDER BY Book_Name
 SELECT Book_Name, Author_Name, CASE Category WHEN 'Database' THEN 'D' WHEN 'Science' THEN 'S' WHEN 'RDBMS' THEN 'R' ELSE 'O' END AS Category FROM Books_1431;
 
 -- List all the Members that became the Member in the year 2011
-SELECT Member_Name FROM Member_1431 WHERE EXTRACT(YEAR FROM Membership_Date) = 2011;
+SELECT Member_Name FROM Member_1431 WHERE EXTRACT(YEAR FROM Ace_Open_Date) = 2011;

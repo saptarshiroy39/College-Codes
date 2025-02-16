@@ -1,15 +1,15 @@
 echo "Enter the number of elements:"
-read nun
+read num
 
 a=3
 b=5
-echo "Fibonacci series of $nun elements starts from 3:"
+echo "Fibonacci series of $num elements starts from 3:"
 echo "$a"
 echo "$b"
 
-for ((i = 2; i < $nun; i++))
+for ((i = 2; i < $num; i++))
 do
-  c = $((a + b))
+  c=$((a + b))
   a=$b
   b=$c
   echo "$c"

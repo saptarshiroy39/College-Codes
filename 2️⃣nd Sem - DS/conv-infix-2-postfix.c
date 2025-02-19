@@ -76,5 +76,6 @@ int main()
   fgets(infix, SIZE, stdin);
   infixToPostfix(infix, postfix);
   printf("Postfix expression: %s\n", postfix);
+  
   return 0;
 }

@@ -1,9 +1,11 @@
 #include <stdio.h>
+
 int main()
 {
   int n, a = 0;
   printf("Enter the number : ");
   scanf("%d", &n);
+  
   if (n == 0 || n == 1)
   {
     a = 1;
@@ -23,5 +25,6 @@ int main()
   {
     printf("%d is not a prime number", n);
   }
+
   return 0;
 }

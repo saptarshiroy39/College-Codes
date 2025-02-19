@@ -1,10 +1,12 @@
 #include <stdio.h>
+
 int main()
 {
   unsigned int num;
   unsigned int mask = 32768;
   printf("Enter the DECIMAL number: ");
   scanf("%u", &num);
+  
   while (mask > 0)
   {
     if ((num & mask) == 0)
@@ -18,5 +20,6 @@ int main()
     mask = mask >> 1;
   }
   printf(" is the BINARY value");
+  
   return 0;
 }

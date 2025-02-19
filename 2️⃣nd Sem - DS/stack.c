@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define SIZE 10
+
 int c = 0;
 // Declearing the variables for stack-
 struct stack

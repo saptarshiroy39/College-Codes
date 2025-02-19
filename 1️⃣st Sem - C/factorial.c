@@ -1,10 +1,12 @@
 #include <stdio.h>
+
 int main()
 {
   int num, i;
   unsigned long long int fact = 1;
   printf("Enter a Number: ");
   scanf("%d", &num);
+  
   if (num < 0)
   {
     printf("Error! Enter a Positive Number.");
@@ -17,5 +19,6 @@ int main()
     }
     printf("%d! = %llu", num, fact);
   }
+  
   return 0;
 }

@@ -1,9 +1,11 @@
 #include <stdio.h>
+
 int main()
 {
   int daynumber;
   printf("Enter a number between 1 to 7: ");
   scanf("%d", &daynumber);
+  
   switch (daynumber)
   {
   case 1:
@@ -37,5 +39,6 @@ int main()
   default:
     printf("ERROR! Enter number between 1 to 7\n");
   }
+
   return 0;
 }

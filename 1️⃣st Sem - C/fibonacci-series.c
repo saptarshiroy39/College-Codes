@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main()
 {
   int a = 0, b = 1, c, i, number;
@@ -6,6 +7,7 @@ int main()
   scanf("%d", &number);
   printf("Fibonacci series of %d elements:\n", number);
   printf("%d %d", a, b);
+  
   for (i = 2; i < number; ++i)
   {
     c = a + b;
@@ -13,5 +15,6 @@ int main()
     b = c;
     printf(" %d", c);
   }
+  
   return 0;
 }

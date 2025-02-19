@@ -25,5 +25,6 @@ int main()
 
   towerofHanoi(num_disks, 'A', 'C', 'B');
   printf("Total number of moves: %d\n", move_count);
+  
   return 0;
 }

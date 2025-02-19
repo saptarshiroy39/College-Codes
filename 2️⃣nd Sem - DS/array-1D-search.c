@@ -1,12 +1,12 @@
-// 17-01-2024 = Data Structure-LA
 #include <stdio.h>
+
 int main()
 {
   int row, n, a;
   printf("Write array size: ");
   scanf("%d", &row);
   int arr[row];
-  printf("Write array\n");
+  printf("Write array:\n");
 
   for (int i = 0; i < row; i++)
   {

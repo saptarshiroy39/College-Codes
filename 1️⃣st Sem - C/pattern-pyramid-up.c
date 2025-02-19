@@ -4,6 +4,7 @@ int main()
   int row, i, a, b;
   printf("Enter number of rows : ");
   scanf("%d", &row);
+
   for (i = 0; i <= row; i++)
   {
     for (a = 1; a <= row - i; a++)
@@ -16,16 +17,20 @@ int main()
     }
     printf("\n");
   }
+
   return 0;
 }
 
 /*
+
 #include <stdio.h>
+
 int main()
 {
   int row, i, a, b;
   printf("Enter number of rows : ");
   scanf("%d", &row);
+
   for (i = 0; i <= row; i++)
   {
     for (a = 1; a <= row - i; a++)
@@ -38,15 +43,20 @@ int main()
     }
     printf("\n");
   }
+
   return 0;
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 #include <stdio.h>
+
 int main()
 {
   int row, i, a, b;
   printf("Enter number of rows : ");
   scanf("%d", &row);
+
   for (i = 1; i <= row; i++)
   {
     for (a = 1; a <= row - i; a++)
@@ -59,15 +69,20 @@ int main()
     }
     printf("\n");
   }
+
   return 0;
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 #include <stdio.h>
+
 int main()
 {
   int row, i, a, b;
   printf("Enter number of rows : ");
   scanf("%d", &row);
+  
   for (i = 0; i <= row; i++)
   {
     for (a = 1; a <= row - i; a++)
@@ -80,6 +95,8 @@ int main()
     }
     printf("\n");
   }
+
   return 0;
 }
+  
 */

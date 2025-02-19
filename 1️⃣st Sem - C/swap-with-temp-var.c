@@ -1,13 +1,13 @@
 #include <stdio.h>
 int main()
 {
-  int a, b, c;
+  int a, b, temp;
 
   printf("Enter 2 numbers: ");
   scanf("%d%d", &a, &b);
-  c = a;
+  temp = a;
   a = b;
-  b = c;
+  b = temp;
   printf("After swapping the numbers are: %d %d", a, b);
 
   return 0;

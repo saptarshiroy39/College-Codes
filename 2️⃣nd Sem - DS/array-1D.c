@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void array1D(int row, int arr[row])
 {
   printf("1D Array = \n");

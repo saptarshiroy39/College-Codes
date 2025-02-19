@@ -40,9 +40,11 @@ int main()
 {
   char postfix[SIZE];
   char infix[SIZE];
+  
   printf("Enter postfix expression: ");
   fgets(postfix, SIZE, stdin);
   postfixToInfix(postfix, infix);
   printf("Infix expression: %s\n", infix);
+
   return 0;
 }

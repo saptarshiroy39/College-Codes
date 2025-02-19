@@ -100,14 +100,14 @@ ALTER TABLE Issue_1431 ADD CONSTRAINT Member_Id_fk FOREIGN KEY (Member_Id) REFER
 -- );
 
 -- Insert the following data into the "Member" table
-INSERT INTO Member_1431 VALUES (1, 'Sayantan Sinha', 'Pune', '10-Dec-10', 'Lifetime', 2000, 6, 50);
-INSERT INTO Member_1431 VALUES (2, 'Abhirup Sarkar', 'Kolkata', '19-Jan-11', 'Annual', 1400, 3, 0);
-INSERT INTO Member_1431 VALUES (3, 'Ritesh Bhuniya', 'Gujarat', '20-Feb-11', 'Quarterly', 350, 2, 100);
-INSERT INTO Member_1431 VALUES (4, 'Paresh Sen', 'Tripura', '21-Mar-11', 'HalfYearly', 700, 1, 200);
-INSERT INTO Member_1431 VALUES (5, 'Sohini Haldar', 'Birbhum', '11-Apr-11', 'Lifetime', 2000, 6, 10);
-INSERT INTO Member_1431 VALUES (6, 'Supama Biswas', 'Kolkata', '12-Apr-11', 'HalfYearly', 700, 1, 0);
-INSERT INTO Member_1431 VALUES (7, 'Suranjana Basu', 'Purulia', '30-Jun-11', 'Annual', 1400, 3, 50);
-INSERT INTO Member_1431 VALUES (8, 'Arpita Roy', 'Kolkata', '31-Jul-11', 'HalfYearly', 700, 1, 0);
+INSERT INTO Member_1431 VALUES (1, 'Sayantan Sinha', 'Pune', '10-dec-10', 'Lifetime', 2000, 6, 50);
+INSERT INTO Member_1431 VALUES (2, 'Abhirup Sarkar', 'Kolkata', '19-jan-11', 'Annual', 1400, 3, 0);
+INSERT INTO Member_1431 VALUES (3, 'Ritesh Bhuniya', 'Gujarat', '20-feb-11', 'Quarterly', 350, 2, 100);
+INSERT INTO Member_1431 VALUES (4, 'Paresh Sen', 'Tripura', '21-mar-11', 'HalfYearly', 700, 1, 200);
+INSERT INTO Member_1431 VALUES (5, 'Sohini Haldar', 'Birbhum', '11-apr-11', 'Lifetime', 2000, 6, 10);
+INSERT INTO Member_1431 VALUES (6, 'Supama Biswas', 'Kolkata', '12-apr-11', 'HalfYearly', 700, 1, 0);
+INSERT INTO Member_1431 VALUES (7, 'Suranjana Basu', 'Purulia', '30-jun-11', 'Annual', 1400, 3, 50);
+INSERT INTO Member_1431 VALUES (8, 'Arpita Roy', 'Kolkata', '31-jul-11', 'HalfYearly', 700, 1, 0);
 
 -- Insert the following data into the "Books" table
 INSERT INTO Books_1431 VALUES (101, 'Let us C', 'Denis Ritchie', 450, 'Others');
@@ -120,10 +120,10 @@ INSERT INTO Books_1431 VALUES (107, 'Optics', 'Ghatak', 600, 'Science');
 INSERT INTO Books_1431 VALUES (108, 'Data Structure', 'G.S. Baluja', 350, 'Others');
 
 -- Insert the following data into the "Issue" table
-INSERT INTO Issue_1431 VALUES (7001, 101, 1, '10-Jan-11', NULL);
-INSERT INTO Issue_1431 VALUES (7002, 102, 2, '25-Jan-11', NULL);
-INSERT INTO Issue_1431 VALUES (7003, 104, 1, '01-Feb-11', NULL);
-INSERT INTO Issue_1431 VALUES (7004, 104, 2, '15-Mar-11', NULL);
-INSERT INTO Issue_1431 VALUES (7005, 101, 4, '04-Apr-11', NULL);
-INSERT INTO Issue_1431 VALUES (7006, 108, 5, '12-Apr-11', NULL);
-INSERT INTO Issue_1431 VALUES (7007, 101, 8, '01-Aug-11', NULL);
+INSERT INTO Issue_1431 VALUES (7001, 101, 1, '10-jan-11', NULL);
+INSERT INTO Issue_1431 VALUES (7002, 102, 2, '25-jan-11', NULL);
+INSERT INTO Issue_1431 VALUES (7003, 104, 1, '01-feb-11', NULL);
+INSERT INTO Issue_1431 VALUES (7004, 104, 2, '15-mar-11', NULL);
+INSERT INTO Issue_1431 VALUES (7005, 101, 4, '04-apr-11', NULL);
+INSERT INTO Issue_1431 VALUES (7006, 108, 5, '12-apr-11', NULL);
+INSERT INTO Issue_1431 VALUES (7007, 101, 8, '01-aug-11', NULL);

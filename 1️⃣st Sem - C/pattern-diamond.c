@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main()
 {
   int row, i, a, b;
@@ -29,5 +30,6 @@ int main()
     }
     printf("\n");
   }
+  
   return 0;
 }

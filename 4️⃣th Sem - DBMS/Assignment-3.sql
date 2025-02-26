@@ -93,7 +93,7 @@ SELECT Book_Name FROM Books_1431 WHERE Cost BETWEEN 300 AND 500;
 SELECT Member_Name FROM Member_1431 WHERE Membership_Type = 'HalfYearly';
 
 -- List the Name of the Members who open their accounts in the year 2011
-SELECT Member_Name FROM Member_1431 WHERE EXTRACT(YEAR FROM Ace_Open_Date)=2011;
+SELECT Member_Name FROM Member_1431 WHERE EXTRACT(YEAR FROM Ace_Open_Date) = 2011;
 --SELECT Member_Name FROM Member_1431 WHERE Ace_Open_Date LIKE '%11';
 
 -- Retrieve the Penalty Amount of the Members who has taken the book "LET US C"

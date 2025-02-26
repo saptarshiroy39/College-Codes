@@ -3,7 +3,7 @@ read num
 
 a=3
 b=5
-echo "Fibonacci series of $num elements starts from 3:"
+echo "Fibonacci series of $num elements starts with 3,5:"
 echo "$a"
 echo "$b"
 

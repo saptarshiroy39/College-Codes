@@ -12,13 +12,13 @@ CREATE TABLE Student_1431
 );
 
 -- Create table "MSc" from the "Student" table with the same fields and same structure but without any data
-CREATE TABLE MSc_1431 AS SELECT * FROM Student_1431 WHERE 1=2;
+CREATE TABLE MSc_1431 AS SELECT * FROM Student_1431 WHERE 1 = 2;
 
 -- Display the structure of "MSc" table
 DESC MSc_1431;
 
 -- Create table "MCA" from the "Student" table with the same fields and same structure but without any data
-CREATE TABLE MCA_1431 AS SELECT * FROM Student_1431 WHERE 1=2;
+CREATE TABLE MCA_1431 AS SELECT * FROM Student_1431 WHERE 1 = 2;
 
 -- Rename Course with Department and Name with First Name
 ALTER TABLE MCA_1431 RENAME COLUMN Course TO Department;

@@ -1,6 +1,5 @@
 -- Create a table "Student" with the following structure
-CREATE TABLE Student_1431
-(
+CREATE TABLE Student_1431 (
   Roll NUMBER(5),
   Name VARCHAR2(30),
   Age NUMBER(5),
@@ -12,17 +11,20 @@ CREATE TABLE Student_1431
 );
 
 -- Create table "MSc" from the "Student" table with the same fields and same structure but without any data
-CREATE TABLE MSc_1431 AS SELECT * FROM Student_1431 WHERE 1 = 2;
+CREATE TABLE MSc_1431 AS 
+SELECT * FROM Student_1431 WHERE 1 = 2;
 
 -- Display the structure of "MSc" table
 DESC MSc_1431;
 
 -- Create table "MCA" from the "Student" table with the same fields and same structure but without any data
-CREATE TABLE MCA_1431 AS SELECT * FROM Student_1431 WHERE 1 = 2;
+CREATE TABLE MCA_1431 AS 
+SELECT * FROM Student_1431 WHERE 1 = 2;
 
--- Rename Course with Department and Name with First Name
+-- Rename Course with Department with First Name
 ALTER TABLE MCA_1431 RENAME COLUMN Course TO Department;
 
+-- Rename Name with First Name
 ALTER TABLE MCA_1431 RENAME COLUMN Name TO FirstName;
 
 -- Display the structure of "MCA" table
@@ -45,18 +47,21 @@ SELECT * FROM Student_1431;
 SELECT * FROM Student_1431 WHERE Roll = 5;
 
 -- Show the roll, name, and marks of all subjects for all students from the "Student" table
-SELECT Roll,Name,Math,Physics,Computer FROM Student_1431;
+SELECT Roll, Name, Math, Physics, Computer FROM Student_1431;
 
 -- Insert data in the "MCA" table from the "Student" table where the course is MCA
-INSERT INTO MCA_1431 (SELECT * FROM Student_1431 WHERE Course = 'MCA');
+INSERT INTO MCA_1431 
+SELECT * FROM Student_1431 WHERE Course = 'MCA';
 
 -- Display the structure of the "Student" and "MCA" tables
 DESC Student_1431;
-
 DESC MCA_1431;
 
 -- Update the Math marks of the student with Roll no 7 from 91 to 95 in the "Student" table
-UPDATE Student_1431 SET Math = 95 WHERE Roll = 7;
+UPDATE Student_1431 
+SET Math = 95 
+WHERE Roll = 7;
 
 -- Delete the details of the student with Roll no 2 from the "Student" table
-DELETE FROM Student_1431 WHERE Roll = 2;
+DELETE FROM Student_1431 
+WHERE Roll = 2;

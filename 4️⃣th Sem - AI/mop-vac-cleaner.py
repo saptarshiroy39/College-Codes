@@ -12,4 +12,5 @@ for i in range(row):
             matrix[i][j] = 1
             print(matrix)
 
+print("Final Cleaning Area: ")
 print(matrix)

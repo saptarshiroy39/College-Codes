@@ -55,7 +55,7 @@ void placeQueen(int i)
 
 int main()
 {
-  cout << "Enter size of the board (N): ";
+  cout << "Enter number of Queens (N): ";
   cin >> N;
 
   for (int i = 1; i <= N; i++)

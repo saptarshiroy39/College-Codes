@@ -15,6 +15,7 @@ College-Codes/
 │── 3️⃣rd-Sem C.Arch
 │── 3️⃣rd-Sem OOP
 │── 4️⃣th-Sem AI
+│── 4️⃣th-Sem Algo.2
 │── 4️⃣th-Sem DBMS
 │── 4️⃣th-Sem OS
 ```
@@ -37,8 +38,9 @@ College-Codes/
 
 ### **4️⃣th Semester**
 - **Artificial Intelligence (AI)** [Python]
+- **Algorithm II (Algo.2)** [C++]
 - **Database Management Systems (DBMS)** [SQL]
-- **Operating Systems (OS)** [Shell Script]
+- **Operating Systems (OS)** [ShellScript]
 
 ---
 

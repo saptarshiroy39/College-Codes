@@ -142,8 +142,6 @@ INSERT ALL
   INTO Reserved_1431 VALUES ('s87', 102, '12-dec-1998')
 SELECT * FROM DUAL;
 
--- Queries:
-
 -- Find names in uppercase and ages of all sailors
 SELECT UPPER(SNAME), AGE 
 FROM Sailor_1431;

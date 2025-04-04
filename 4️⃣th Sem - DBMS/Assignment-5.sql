@@ -17,7 +17,7 @@ CREATE TABLE EMPLOYEE_1431
 INSERT ALL
   INTO EMPLOYEE_1431 VALUES ('John', 'B', 'Smith', 123456789, '09-JAN-95', '731 Fondren, Houston, TX', 'M', 30000, 333445555, 5)
   INTO EMPLOYEE_1431 VALUES ('Alicia', 'J', 'Zelaya', 999887777, '19-JUL-51', '3321 Castle, Spring, TX', 'F', 25000, 987654321, 4)
-  INTO EMPLOYEE_1431 VALUES ('Jennifer', 'S', 'Wallace', 987654321, '20-JUN-41', '291 Berry, bellaire, TX', 'F', 43000, 888665555, 4)
+  INTO EMPLOYEE_1431 VALUES ('Jennifer', 'S', 'Wallace', 987654321, '20-JUN-41', '291 Berry, Bellaire, TX', 'F', 43000, 888665555, 4)
   INTO EMPLOYEE_1431 VALUES ('Ramesh', 'K', 'Narayan', 666884444, '15-SEP-62', '975 Fire Oak, Humble, TX', 'M', 38000, 333445555, 5)
   INTO EMPLOYEE_1431 VALUES ('Joyce', 'A', 'Bond', 453453453, '31-JUL-63', '5631 Rice, Houston, TX', 'F', 25000, 333445555, 5)
   INTO EMPLOYEE_1431 VALUES ('Ahmad', 'V', 'Jabbar', 333445555, '29-MAR-69', '980 Dallas, Houston, TX', 'M', 25000, 987654321, 4)

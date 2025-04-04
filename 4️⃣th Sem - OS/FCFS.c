@@ -20,7 +20,7 @@ void FCFS(int bt[], int n)
   printf("Process\tBurst Time\tWaiting Time\tTurnaround Time\n");
   for (int i = 0; i < n; i++)
   {
-    printf("%d\t%d\t\t%d\t\t%d\n", i + 1, bt[i], wt[i], tat[i]);
+    printf("%d\t%d\t\t%d\t\t%d\n", i, bt[i], wt[i], tat[i]);
   }
 }
 
@@ -31,9 +31,10 @@ int main()
   scanf("%d", &n);
 
   int bt[n];
-  printf("Enter the burst times of the processes: ");
+  printf("Enter the burst times of the processes:\n");
   for (int i = 0; i < n; i++)
   {
+    printf("Process %d: ", i);
     scanf("%d", &bt[i]);
   }
 

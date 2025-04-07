@@ -1,358 +1,213 @@
--- Create the "Sailor" table with the following structure
-CREATE TABLE Sailor_1431
+-- Create sequences for auto-increment columns for the "MATCH" table
+CREATE SEQUENCE match_seq
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+CACHE 20;
+
+-- Create Table "MATCH" and insert data into it
+CREATE TABLE MATCH_1431
 (
-  SID VARCHAR2(4),
-  SNAME VARCHAR2(10),
-  MNAME VARCHAR2(10),
-  SURNAME VARCHAR2(10),
-  RATING NUMBER(2),
-  AGE NUMBER(3,1)
+  SLNO NUMBER PRIMARY KEY,
+  MATCH_ID NUMBER UNIQUE,
+  TEAM1 VARCHAR2(20),
+  TEAM2 VARCHAR2(20),
+  GROUND VARCHAR2(20),
+  PLAY_DATE DATE,
+  WINNER VARCHAR2(20)
 );
 
--- Add a primary key constraint on SID
-ALTER TABLE Sailor_1431 
-ADD CONSTRAINT SID_pk PRIMARY KEY (SID);
-
--- CHECK constraint for SID to start with 's'
-ALTER TABLE Sailor_1431 
-ADD CONSTRAINT SID_s CHECK (SID LIKE 's%');
-
--- CHECK constraint for SNAME to be in InitCap
-ALTER TABLE Sailor_1431 
-ADD CONSTRAINT SNAME CHECK (SNAME = INITCAP(SNAME));
-
--- NOT NULL constraint for SURNAME
-ALTER TABLE Sailor_1431 
-MODIFY (SURNAME VARCHAR2(10) NOT NULL);
-
--- DEFAULT constraint for RATING
-ALTER TABLE Sailor_1431 
-MODIFY (RATING NUMBER(2) DEFAULT 0);
-
--- NOT NULL constraint for AGE
-ALTER TABLE Sailor_1431 
-MODIFY (AGE NUMBER(3,1) NOT NULL);
-
--- CREATE TABLE Sailor_1431
--- (
---   SID VARCHAR2(4) PRIMARY KEY CHECK (SID LIKE 's%'),
---   SNAME VARCHAR2(10) CHECK (SNAME = INITCAP(SNAME)),
---   MNAME VARCHAR2(10),
---   SURNAME VARCHAR2(10) NOT NULL,
---   RATING NUMBER(2) DEFAULT 0,
---   AGE NUMBER(3,1) NOT NULL
--- );
-
--- Create the "Boat" table with the following structure
-CREATE TABLE Boat_1431
-(
-  BID NUMBER(3),
-  BNAME VARCHAR2(10),
-  COLOR VARCHAR2(6)
-);
-
--- Add a primary key constraint on BID
-ALTER TABLE Boat_1431 
-ADD CONSTRAINT BID_pk PRIMARY KEY (BID);
-
--- CHECK constraint for BNAME to be in UPPERCASE
-ALTER TABLE Boat_1431 
-ADD CONSTRAINT BNAME CHECK (BNAME = UPPER(BNAME));
-
--- CHECK constraint for COLOR to be either 'red', 'green', or 'blue'
-ALTER TABLE Boat_1431 
-ADD CONSTRAINT COLOR CHECK (COLOR IN ('red', 'green', 'blue'));
-
--- CREATE TABLE Boat_1431
--- (
---   BID NUMBER(3) PRIMARY KEY,
---   BNAME VARCHAR2(10) CHECK (BNAME = UPPER(BNAME)),
---   COLOR VARCHAR2(6) NOT NULL CHECK (COLOR IN ('red','green','blue'))
--- );
-
--- Create the "Reserved" table with the following structure
-CREATE TABLE Reserved_1431
-(
-  SID VARCHAR2(4),
-  BID NUMBER(3),
-  DAY DATE
-);
-
--- Foreign Key constraints referencing Sailor and Boat tables
-ALTER TABLE Reserved_1431 
-ADD CONSTRAINT SID_fk FOREIGN KEY (SID) REFERENCES Sailor_1431(SID);
-
-ALTER TABLE Reserved_1431 
-ADD CONSTRAINT BID_fk FOREIGN KEY (BID) REFERENCES Boat_1431(BID);
-
--- CHECK constraint for DAY to be before '01-jan-2000'
-ALTER TABLE Reserved_1431 
-ADD CONSTRAINT DAY CHECK (DAY < DATE '2000-01-01');
-
--- Primary key constraint on SID and BID
-ALTER TABLE Reserved_1431 
-ADD CONSTRAINT SID_BID_pk PRIMARY KEY (SID, BID);
-
--- CREATE TABLE Reserved_1431
--- (
---   SID VARCHAR2(4) REFERENCES Sailor_1431(SID),
---   BID NUMBER(3) REFERENCES Boat_1431(BID),
---   DAY DATE CHECK (DAY < '01-jan-2000'),
---   PRIMARY KEY (SID, BID)
--- );
-
--- Insert data into the "Sailor" table
 INSERT ALL
-  INTO Sailor_1431 VALUES ('s22', 'Fredrico', NULL, 'Roberts', 7, 45)
-  INTO Sailor_1431 VALUES ('s31', 'Lubber', NULL, 'Sheen', 8, 55.5)
-  INTO Sailor_1431 VALUES ('s32', 'Charlotte', NULL, 'Gordin', 8, 25.5)
-  INTO Sailor_1431 VALUES ('s58', 'Mary', 'Beth', 'Lyon', 10, 35)
-  INTO Sailor_1431 VALUES ('s64', 'Horatio', NULL, 'Powell', 7, 35.4)
-  INTO Sailor_1431 VALUES ('s71', 'Zorba', NULL, 'Alex', 10, 16)
-  INTO Sailor_1431 VALUES ('s29', 'Brutus', NULL, 'Slater', 1, 33.8)
-  INTO Sailor_1431 VALUES ('s95', 'Deep', 'Graceb', 'Davis', 3, 63.5)
-  INTO Sailor_1431 VALUES ('s74', 'Horatio', NULL, 'Forrest', 9, 35)
-  INTO Sailor_1431 VALUES ('s85', 'Sara', 'Art', 'Powell', 3, 25.5)
-  INTO Sailor_1431 VALUES ('s80', 'Deep', 'Kumar', 'Kumar', 6, 17)
-  INTO Sailor_1431 VALUES ('s87', 'Deep', 'Kumar', 'Jha', NULL, 51)
+  INTO MATCH_1431 VALUES (match_seq.nextval, 2475, 'AUSTRALIA', 'INDIA', 'MELBOURN', '10-FEB-08', 'TEAM2')
+  INTO MATCH_1431 VALUES (match_seq.nextval, 2576, 'INDIA', 'SRILANKA', 'ADELAIDE', '19-FEB-08', 'TEAM1')
+  INTO MATCH_1431 VALUES (match_seq.nextval, 2677, 'AUSTRALIA', 'INDIA', 'SYDNEY', '02-MAR-08', 'TEAM1')
+  INTO MATCH_1431 VALUES (match_seq.nextval, 2778, 'AUSTRALIA', 'SRILANKA', 'BRISBANE', '04-MAR-08', 'TEAM2')
+  INTO MATCH_1431 VALUES (match_seq.nextval, 2879, 'SRILANKA', 'INDIA', 'COLOMBO', '27-AUG-08', 'TEAM2')
 SELECT * FROM DUAL;
 
--- Insert data into the "Boat" table
+-- Create sequences for auto-increment columns for the "PLAYER" table
+CREATE SEQUENCE player_seq
+START WITH 100
+INCREMENT BY -10
+MINVALUE 0
+MAXVALUE 100
+NOCYCLE
+CACHE 20;
+
+-- Create Table "PLAYER" and insert data into it
+CREATE TABLE PLAYER_1431
+(
+  SLNO NUMBER PRIMARY KEY,
+  PLAYER_ID NUMBER UNIQUE,
+  LNAME VARCHAR2(20),
+  FNAME VARCHAR2(20),
+  COUNTRY VARCHAR2(20),
+  YBORN NUMBER,
+  BPLACE VARCHAR2(20),
+  FTEST NUMBER
+);
+
 INSERT ALL
-  INTO Boat_1431 VALUES (101, 'INTERLAKE', 'blue')
-  INTO Boat_1431 VALUES (102, 'INTERLAKE', 'red')
-  INTO Boat_1431 VALUES (103, 'CLIPPER', 'green')
-  INTO Boat_1431 VALUES (104, 'MARINE', 'red')
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 49001, 'TENDULKAR', 'SACHIN', 'INDIA', 1973, 'MUMBAI', 1986)
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 49002, 'DRAVID', 'RAHUL', 'INDIA', 1973, 'INDORE', 1996)
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 59001, 'VASS', 'CHAMINDA', 'SRILANKA', 1974, 'MATTUMAGALA', 1994)
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 59002, 'JAYASURIYA', 'SANATH', 'SRILANKA', 1969, 'MATARA', 1991)
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 69001, 'LEE', 'BRETT', 'AUSTRALIA', 1976, 'WOLLONGONG', 1999)
+  INTO PLAYER_1431 VALUES (player_seq.nextval, 69002, 'SYMONDS', 'ANDREW', 'AUSTRALIA', 1975, 'BIRMINGHUM', 2004)
 SELECT * FROM DUAL;
 
--- Insert data into the "Reserved" table
+-- Create sequences for auto-increment columns for the "BOWLING" table
+CREATE SEQUENCE bowling_seq
+START WITH 1000
+INCREMENT BY 2
+NOMAXVALUE
+NOCYCLE
+CACHE 20;
+
+-- Create Table "BOWLING" and insert data into it
+CREATE TABLE BOWLING_1431
+(
+  SLNO NUMBER PRIMARY KEY,
+  MATCH_ID NUMBER,
+  PLAYER_ID NUMBER,
+  NOVERS NUMBER,
+  MAIDENS NUMBER,
+  NRUN_RCV NUMBER,
+  NWICKETS NUMBER,
+  CONSTRAINT FK_BOWLING_MATCH FOREIGN KEY (MATCH_ID) REFERENCES MATCH_1431(MATCH_ID),
+  CONSTRAINT FK_BOWLING_PLAYER FOREIGN KEY (PLAYER_ID) REFERENCES PLAYER_1431(PLAYER_ID)
+);
+
 INSERT ALL
-  INTO Reserved_1431 VALUES ('s22', 101, '10-oct-1998')
-  INTO Reserved_1431 VALUES ('s22', 103, '10-aug-1998')
-  INTO Reserved_1431 VALUES ('s22', 102, '10-oct-1998')
-  INTO Reserved_1431 VALUES ('s22', 104, '10-jul-1998')
-  INTO Reserved_1431 VALUES ('s31', 102, '11-oct-1998')
-  INTO Reserved_1431 VALUES ('s31', 103, '11-jun-1998')
-  INTO Reserved_1431 VALUES ('s31', 104, '11-dec-1998')
-  INTO Reserved_1431 VALUES ('s64', 101, '09-may-1998')
-  INTO Reserved_1431 VALUES ('s64', 102, '09-aug-1998')
-  INTO Reserved_1431 VALUES ('s74', 103, '09-aug-1998')
-  INTO Reserved_1431 VALUES ('s80', 102, '07-jul-1998')
-  INTO Reserved_1431 VALUES ('s87', 101, '08-jul-1998')
-  INTO Reserved_1431 VALUES ('s87', 102, '12-dec-1998')
+  INTO BOWLING_1431 VALUES (bowling_seq.nextval, 2576, 59001, 8, 3, 58, 1)
+  INTO BOWLING_1431 VALUES (bowling_seq.nextval, 2677, 69001, 10, 1, 27, 3)
+  INTO BOWLING_1431 VALUES (bowling_seq.nextval, 2879, 49002, 7, 0, 44, 0)
+  INTO BOWLING_1431 VALUES (bowling_seq.nextval, 2576, 49001, 3, 2, 15, 1)
+  INTO BOWLING_1431 VALUES (bowling_seq.nextval, 2778, 59001, 7, 1, 20, 5)
 SELECT * FROM DUAL;
 
--- Find names in uppercase and ages of all sailors
-SELECT UPPER(SNAME), AGE 
-FROM Sailor_1431;
+-- Create sequences for auto-increment columns for the "BATTING" table
+CREATE SEQUENCE batting_seq
+START WITH 501
+INCREMENT BY 1
+NOMAXVALUE
+NOCYCLE
+CACHE 20;
 
--- Find all records from the "Sailor" table in ascending order by name
-SELECT * 
-FROM Sailor_1431 
-ORDER BY SNAME ASC;
-
--- Select all distinct sailors' names
-SELECT DISTINCT SNAME 
-FROM Sailor_1431;
-
--- Show all distinct sailors' names and ratings between 5 and 10
-SELECT DISTINCT SNAME, RATING 
-FROM Sailor_1431 
-WHERE RATING BETWEEN 5 AND 10;
-
--- Select all records from "Sailor" table ordered by rating (ascending)
-SELECT * 
-FROM Sailor_1431 
-ORDER BY RATING ASC;
-
--- Select all records from "Sailor" table ordered by age (descending)
-SELECT * 
-FROM Sailor_1431 
-ORDER BY AGE DESC;
-
--- Find SID of sailor named 'Horatio' with age = 35.4
-SELECT * 
-FROM Sailor_1431 
-WHERE SNAME = 'Horatio' AND AGE = 35.4;
-
--- Find names of sailors who reserved boat 104
-SELECT S.SNAME 
-FROM Sailor_1431 S
-JOIN Reserved_1431 R ON S.SID = R.SID
-WHERE R.BID = 104;
-
--- Find SIDs of sailors who reserved a red boat
-SELECT DISTINCT R.SID 
-FROM Reserved_1431 R 
-JOIN Boat_1431 B ON R.BID = B.BID
-WHERE B.COLOR = 'red';
-
--- Select names of sailors who have ratings present
-SELECT SNAME 
-FROM Sailor_1431 
-WHERE RATING IS NOT NULL;
-
--- Select names of sailors who have no ratings
-SELECT SNAME 
-FROM Sailor_1431 
-WHERE RATING IS NULL;
-
--- Find colors of boats reserved by sailor named 'Lubber'
-SELECT DISTINCT B.COLOR 
-FROM Boat_1431 B 
-JOIN Reserved_1431 R ON B.BID = R.BID 
-JOIN Sailor_1431 S ON S.SID = R.SID 
-WHERE S.SNAME = 'Lubber';
-
--- Find sailors who reserved at least one boat
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME 
-FROM Sailor_1431 S 
-JOIN Reserved_1431 R ON R.SID = S.SID;
-
--- Find sailors whose name starts with 'B' and ends with 'b' (min 3 characters)
-SELECT SNAME 
-FROM Sailor_1431 
-WHERE SNAME LIKE 'B_%b';
-
--- Find sailors whose name starts and ends with 'B' (exactly 3 characters)
-SELECT SNAME 
-FROM Sailor_1431 
-WHERE SNAME LIKE 'B_b';
-
--- Find sailors who reserved a red or green boat
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME 
-FROM Sailor_1431 S 
-JOIN Reserved_1431 R ON R.SID = S.SID 
-JOIN Boat_1431 B ON B.BID = R.BID 
-WHERE B.COLOR IN ('red', 'green');
-
--- Find sailors who reserved a red boat but not a green boat
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME
-FROM Sailor_1431 S
-JOIN Reserved_1431 R ON S.SID = R.SID
-JOIN Boat_1431 B ON R.BID = B.BID
-WHERE B.COLOR = 'red'
-AND S.SID NOT IN (
-    SELECT R2.SID 
-    FROM Reserved_1431 R2
-    JOIN Boat_1431 B2 ON R2.BID = B2.BID
-    WHERE B2.COLOR = 'green'
+-- Create Table "BATTING" and insert data into it
+CREATE TABLE BATTING_1431
+(
+  SLNO NUMBER PRIMARY KEY,
+  MATCH_ID NUMBER,
+  PLAYER_ID NUMBER,
+  NRUN_SC NUMBER,
+  CONSTRAINT FK_BATTING_MATCH FOREIGN KEY (MATCH_ID) REFERENCES MATCH_1431(MATCH_ID),
+  CONSTRAINT FK_BATTING_PLAYER FOREIGN KEY (PLAYER_ID) REFERENCES PLAYER_1431(PLAYER_ID)
 );
 
--- Find sailors who reserved boat 103
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME
-FROM Sailor_1431 S
-JOIN Reserved_1431 R ON S.SID = R.SID
-WHERE R.BID = 103;
+INSERT ALL
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2677, 49001, 60)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2778, 59002, 71)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2879, 59001, 60)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2778, 69002, 17)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2879, 59002, 45)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2576, 49001, 36)
+  INTO BATTING_1431 VALUES (batting_seq.nextval, 2475, 49002, 72)
+SELECT * FROM DUAL;
 
+-- Find the ground of the Matches batted by a player whose fname is starting from 'S'
+SELECT DISTINCT M.GROUND
+FROM MATCH_1431 M
+JOIN BATTING_1431 B ON M.MATCH_ID = B.MATCH_ID
+JOIN PLAYER_1431 P ON B.PLAYER_ID = P.PLAYER_ID
+WHERE P.FNAME LIKE 'S%';
 
--- Find sailors who reserved a red boat
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME
-FROM Sailor_1431 S
-JOIN Reserved_1431 R ON S.SID = R.SID
-JOIN Boat_1431 B ON R.BID = B.BID
-WHERE B.COLOR = 'red';
-
--- Find sailors who have not reserved red boats
-SELECT DISTINCT S.SNAME, S.MNAME, S.SURNAME
-FROM Sailor_1431 S
-WHERE S.SID NOT IN (
-    SELECT R.SID
-    FROM Reserved_1431 R
-    JOIN Boat_1431 B ON R.BID = B.BID
-    WHERE B.COLOR = 'red'
+-- Find id of player that have bowled in the match 2576 but not have batted
+SELECT DISTINCT B.PLAYER_ID
+FROM BOWLING_1431 B
+WHERE B.MATCH_ID = 2576
+  AND B.PLAYER_ID NOT IN (
+    SELECT PLAYER_ID
+    FROM BATTING_1431
+    WHERE MATCH_ID = 2576
 );
 
--- Find all records of the sailors for which the rating is greater than the rating of some sailor, where the sailor’s name is ‘Horatio’
-SELECT *
-FROM Sailor_1431
-WHERE RATING > ANY (
-    SELECT RATING
-    FROM Sailor_1431
-    WHERE SNAME = 'Horatio'
+-- Find the batting average of each Indian player along with the PLAYER_ID
+SELECT P.PLAYER_ID, AVG(B.NRUN_SC) AS BATTING_AVG
+FROM PLAYER_1431 P
+JOIN BATTING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+WHERE P.COUNTRY = 'INDIA'
+GROUP BY P.PLAYER_ID;
+
+-- Find the name of that player who has bowled the highest number of overs and also find the ground where he has bowled
+SELECT P.FNAME, P.LNAME, M.GROUND
+FROM PLAYER_1431 P
+JOIN BOWLING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+JOIN MATCH_1431 M ON B.MATCH_ID = M.MATCH_ID
+WHERE B.NOVERS = (
+  SELECT MAX(NOVERS) FROM BOWLING_1431
 );
 
--- Find average age of sailors with rating 10
-SELECT AVG(AGE) AS AVERAGE_AGE
-FROM Sailor_1431
-WHERE RATING = 10;
+-- Find the total run scored by a player who played the first test in 1991
+SELECT SUM(B.NRUN_SC) AS TOTAL_RUNS
+FROM PLAYER_1431 P
+JOIN BATTING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+WHERE P.FTEST = 1991;
 
--- Find the names of the sailors who are older than the oldest sailor of rating = 10
-SELECT SNAME
-FROM Sailor_1431
-WHERE AGE > (
-    SELECT MAX(AGE)
-    FROM Sailor_1431
-    WHERE RATING = 10
+-- Find the name and the number of wickets taken by the youngest player in the database
+SELECT P.FNAME, P.LNAME, SUM(B.NWICKETS) AS TOTAL_WICKETS
+FROM PLAYER_1431 P
+JOIN BOWLING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+WHERE P.YBORN = (
+  SELECT MAX(YBORN) FROM PLAYER_1431
+)
+GROUP BY P.FNAME, P.LNAME;
+
+-- Find the names of the players who batted in only one match
+SELECT P.FNAME, P.LNAME
+FROM PLAYER_1431 P
+JOIN BATTING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+GROUP BY P.FNAME, P.LNAME
+HAVING COUNT(DISTINCT B.MATCH_ID) = 1;
+
+-- Find the name of the player who has taken the highest wickets in a particular match and also find the ground
+SELECT P.FNAME, P.LNAME, M.GROUND
+FROM PLAYER_1431 P
+JOIN BOWLING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+JOIN MATCH_1431 M ON B.MATCH_ID = M.MATCH_ID
+WHERE B.NWICKETS = (
+  SELECT MAX(NWICKETS) FROM BOWLING_1431
 );
 
--- Find the age of the youngest sailor for each rating level
-SELECT RATING, MIN(AGE) AS YOUNGEST_AGE
-FROM Sailor_1431
-GROUP BY RATING;
-
--- Find the name of each sailor who is eligible to vote for each rating level
-SELECT RATING, SNAME
-FROM Sailor_1431
-WHERE AGE >= 18;
-
--- Find the average age of sailor for each rating level with at least two such sailors
-SELECT RATING, AVG(AGE) AS AVERAGE_AGE
-FROM Sailor_1431
-GROUP BY RATING
-HAVING COUNT(SID) >= 2;
-
--- For each red boat count the number of reservations for this boat
-SELECT B.BID, COUNT(R.BID) AS RESERVATION_COUNT
-FROM Boat_1431 B
-JOIN Reserved_1431 R ON B.BID = R.BID
-WHERE B.COLOR = 'red'
-GROUP BY B.BID;
-
--- Find the records of the sailor who is getting the 2nd highest rating
-SELECT *
-FROM Sailor_1431
-WHERE RATING = (
-    SELECT MAX(RATING)
-    FROM Sailor_1431
-    WHERE RATING < (
-        SELECT MAX(RATING)
-        FROM Sailor_1431
-    )
+-- Find the ground where Sachin Tendulkar has scored his highest run
+SELECT M.GROUND
+FROM MATCH_1431 M
+JOIN BATTING_1431 B ON M.MATCH_ID = B.MATCH_ID
+JOIN PLAYER_1431 P ON B.PLAYER_ID = P.PLAYER_ID
+WHERE P.FNAME = 'SACHIN'
+  AND B.NRUN_SC = (
+    SELECT MAX(NRUN_SC)
+    FROM BATTING_1431
+    WHERE PLAYER_ID = 49001
 );
 
--- Find the name of sailors who got 3rd minimum rating
-SELECT SNAME
-FROM Sailor_1431
-WHERE RATING = (
-    SELECT MIN(RATING)
-    FROM Sailor_1431
-    WHERE RATING > (
-        SELECT MIN(RATING)
-        FROM Sailor_1431
-        WHERE RATING > (
-            SELECT MIN(RATING)
-            FROM Sailor_1431
-        )
-    )
-);
+-- Find out the name of a Srilankan bowler who has delivered at least 2 maiden overs
+SELECT P.FNAME, P.LNAME
+FROM PLAYER_1431 P
+JOIN BOWLING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+WHERE P.COUNTRY = 'SRILANKA'
+  AND B.MAIDENS >= 2;
 
--- Find sailors who have reserved all boats
-SELECT S.SID, S.SNAME
-FROM Sailor_1431 S
-WHERE NOT EXISTS (
-    SELECT B.BID
-    FROM Boat_1431 B
-    WHERE NOT EXISTS (
-        SELECT R.BID
-        FROM Reserved_1431 R
-        WHERE R.SID = S.SID AND R.BID = B.BID
-    )
-);
+-- Find the number of wickets of that player whose birth place is in "MATTUMAGALA"
+SELECT SUM(B.NWICKETS) AS TOTAL_WICKETS
+FROM PLAYER_1431 P
+JOIN BOWLING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+WHERE P.BPLACE = 'MATTUMAGALA';
 
--- Find sailors who have reserved more than 2 boats
-SELECT S.SID, S.SNAME
-FROM Sailor_1431 S
-JOIN Reserved_1431 R ON S.SID = R.SID
-GROUP BY S.SID, S.SNAME
-HAVING COUNT(R.BID) > 2;
+-- Find the names of the players who played in more than one matches
+SELECT P.FNAME, P.LNAME
+FROM PLAYER_1431 P
+JOIN BATTING_1431 B ON P.PLAYER_ID = B.PLAYER_ID
+GROUP BY P.FNAME, P.LNAME
+HAVING COUNT(DISTINCT B.MATCH_ID) > 1;

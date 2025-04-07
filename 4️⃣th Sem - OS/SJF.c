@@ -43,16 +43,17 @@ void SJF(int bt[], int p[], int n)
 int main()
 {
   int n;
-  printf("Enter number of jobs :");
+  printf("Enter number of jobs: ");
   scanf("%d", &n);
 
   int p[n];
   int bt[n];
-  printf("Enter Burst Times :");
+  printf("Enter Burst Time of the jobs:\n");
   for (int i = 0; i < n; i++)
   {
+    printf("Job %d: ", i);
     scanf("%d", &bt[i]);
-    p[i] = i + 1;
+    p[i] = i; // Store the original process numbers
   }
 
   SJF(bt, p, n);

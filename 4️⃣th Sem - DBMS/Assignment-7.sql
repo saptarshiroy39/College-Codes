@@ -107,6 +107,6 @@ SELECT * FROM CIRCLE_1431;
 
 -- Write a PL/SQL program that can take a String as an input and display it without any space and also count the no of spaces available in the input string
 
-
 -- Take an input of any string and display each word in a separate line
+
 -- Take an input of any Member Number and display the Member Name in upper case and lower case

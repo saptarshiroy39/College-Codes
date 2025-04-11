@@ -43,7 +43,7 @@ void SJF(int bt[], int p[], int n)
 int main()
 {
   int n;
-  printf("Enter number of jobs: ");
+  printf("Enter the number of jobs: ");
   scanf("%d", &n);
 
   int p[n];

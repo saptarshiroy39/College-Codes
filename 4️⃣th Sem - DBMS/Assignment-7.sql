@@ -90,9 +90,9 @@ END;
 SELECT * FROM CIRCLE_1431;
 
 -- Write a PL/SQL program that can update the cost value of the corresponding book number of the BOOKS_COPY Table
--- INPUT: BOOK_NO, NEW COST,
+-- INPUT: BOOK_NO, NEW COST
 -- CONDITION: The old cost value will be less than 450 and the new cost value will-less
--- Then 900 otherwise provide an error message.
+-- Then 900 otherwise provide an error message
 DECLARE
     Book_Num   Books_1431.Book_No%TYPE;
     Old_Cost   Books_1431.Cost%TYPE;
@@ -122,17 +122,17 @@ END;
 
 -- Write a PL/SQL Program which takes MEMBER_ID as input and provide the corresponding MEMBER_NAME, MEMBER_ADDRESS & FEES PAID
 DECLARE
-    ID         MEMBER_1431.MEMBER_ID%TYPE;
-    NAME       MEMBER_1431.MEMBER_NAME%TYPE;
-    ADDRESS    MEMBER_1431.MEMBER_ADDRESS%TYPE;
-    FEES_PAID  MEMBER_1431.FEES_PAID%TYPE;
+    ID         Member_1431.Member_ID%TYPE;
+    NAME       Member_1431.Member_Name%TYPE;
+    ADDRESS    Member_1431.Member_Address%TYPE;
+    FEES_PAID  Member_1431.Fees_Paid%TYPE;
 BEGIN
     ID := :ENTER_THE_ID_OF_THE_MEMBER;
 
-    SELECT MEMBER_NAME, MEMBER_ADDRESS, FEES_PAID 
+    SELECT Member_Name, Member_Address, Fees_Paid
     INTO NAME, ADDRESS, FEES_PAID 
-    FROM MEMBER_1431
-    WHERE MEMBER_ID = ID;
+    FROM Member_1431
+    WHERE Member_ID = ID;
 
     DBMS_OUTPUT.PUT_LINE('ID:' || ID || 
                          ' NAME: ' || NAME || 
@@ -174,15 +174,15 @@ END;
 
 -- Take an input of any Member Number and display the Member Name in upper case and lower case
 DECLARE
-    ID    MEMBER_1431.MEMBER_ID%TYPE;
-    NAME  MEMBER_1431.MEMBER_NAME%TYPE;
+    ID    Member_1431.Member_ID%TYPE;
+    NAME  Member_1431.Member_Name%TYPE;
 BEGIN
     ID := :ENTER_THE_ID_OF_THE_MEMBER;
 
-    SELECT MEMBER_NAME 
+    SELECT Member_Name
     INTO NAME 
-    FROM MEMBER_1433 
-    WHERE MEMBER_ID = ID;
+    FROM Member_1431
+    WHERE Member_ID = ID;
 
     DBMS_OUTPUT.PUT_LINE('ID:' || ID || 
                          ' NAME_UPRCSE: ' || UPPER(NAME) || 

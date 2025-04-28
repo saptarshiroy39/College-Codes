@@ -8,4 +8,4 @@ do
   fact=$((fact*i))
 done
 
-echo "$num! = $fact"
+echo "Factorial of $num = $fact"

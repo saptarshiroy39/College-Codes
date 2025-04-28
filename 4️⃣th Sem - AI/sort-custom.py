@@ -9,16 +9,11 @@ def custom_sort(arr):
             swap(arr, i, i + 1)
 
 
-def main():
-    arr = list(map(int, input("Enter numbers separated by spaces: ").split()))
+arr = list(map(int, input("Enter numbers: ").split()))
 
-    print("Original array:", arr)
+print("Original array:", arr)
 
-    for _ in range(len(arr)):
-        custom_sort(arr)
+for _ in range(len(arr)):
+    custom_sort(arr)
 
-    print("Sorted array:", arr)
-
-
-if __name__ == "__main__":
-    main()
+print("Sorted array:", arr)

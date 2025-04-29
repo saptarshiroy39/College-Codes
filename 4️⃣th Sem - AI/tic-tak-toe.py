@@ -6,14 +6,12 @@ def show(b):
 
 
 def win(b):
-    lines = (
-        b
-        + [list(c) for c in zip(*b)]
-        + [[b[i][i] for i in range(3)], [b[i][2 - i] for i in range(3)]]
-    )
+    lines = (b + [list(c) for c in zip(*b)] + [[b[i][i] for i in range(3)], [b[i][2 - i] for i in range(3)]])
+
     for l in lines:
         if l[0] != " " and l.count(l[0]) == 3:
             return l[0]
+        
     return "Draw" if all(c != " " for r in b for c in r) else None
 
 
@@ -22,17 +20,20 @@ def mini(b, ai):
     if r:
         return {"X": -1, "O": 1, "Draw": 0}[r]
     scores = []
+
     for i in range(3):
         for j in range(3):
             if b[i][j] == " ":
                 b[i][j] = "O" if ai else "X"
                 scores.append(mini(b, not ai))
                 b[i][j] = " "
+
     return max(scores) if ai else min(scores)
 
 
 def best(b):
     m, s = None, -math.inf
+
     for i in range(3):
         for j in range(3):
             if b[i][j] == " ":
@@ -41,6 +42,7 @@ def best(b):
                 b[i][j] = " "
                 if val > s:
                     m, s = (i, j), val
+                    
     return m
 
 

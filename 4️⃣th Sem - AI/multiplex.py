@@ -1,26 +1,29 @@
 from collections import deque, defaultdict
 
-distances = set(map(int, input("Enter distances of multiplexes from residence : ").split()))
-
+multiplexes = list(map(int, input("Enter distances of multiplexes from residence: ").split()))
 action_multiplexes = set(map(int, input("Enter multiplexes playing action movies: ").split()))
+parking_available_multiplexes = set(map(int, input("Enter multiplexes with parking available: ").split()))
 
-parking_availability = defaultdict(bool)
-for multiplex in action_multiplexes:
-    parking_status = (input(f"Parking availablity at multiplex {multiplex}? (y/n): ").strip().lower())
-    parking_availability[multiplex] = parking_status == "y"
+graph = defaultdict(list)
 
+for m in multiplexes:
+    graph[0].append(m)
+    graph[m].append(0)
 
-def bfs():
-    queue = deque(sorted(distances))
+def bfs(start):
+    visited, queue = set(), deque([start])
 
     while queue:
-        multiplex = queue.popleft()
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
 
-        if multiplex in action_multiplexes and parking_availability[multiplex]:
-            print(f"Selected Multiplex at {multiplex} km")
-            return
+            if node != 0 and node in action_multiplexes and node in parking_available_multiplexes:
+                print(f"🎬 Best multiplex found at {node} km!")
+                return
 
-    print("No suitable multiplex found")
+            queue.extend(set(graph[node]) - visited)
 
+    print("😔 No suitable multiplex found.")
 
-bfs()
+bfs(0)

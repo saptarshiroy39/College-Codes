@@ -3,8 +3,7 @@ def swap(arr, i, j):
 
 
 def custom_sort(arr):
-    n = len(arr)
-    for i in range(n - 1):
+    for i in range(len(arr) - 1):
         if arr[i] > arr[i + 1]:
             swap(arr, i, i + 1)
 

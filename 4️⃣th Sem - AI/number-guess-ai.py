@@ -10,8 +10,8 @@ def number_guessing_ai():
         guess = (low + high) // 2
         tries += 1
 
-        print(f"\nIs it {guess}? (Type 'higher', 'lower', or 'correct')")
-        reply = input().strip().lower()
+        print(f"\nIs it {guess}? ('higher', 'lower' or 'correct')")
+        reply = input("→ ").strip().lower()
 
         if reply == "correct":
             print(f"I guessed it in {tries} tries!")

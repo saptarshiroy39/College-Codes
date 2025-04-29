@@ -33,9 +33,7 @@ if __name__ == "__main__":
     y_values = [f(x) for x in x_values]
 
     plt.plot(x_values, y_values, label=f"Function: {expr}")
-    plt.scatter(
-        path, [f(x) for x in path], color="red", marker="o", label="Hill Climbing Path"
-    )
+    plt.scatter(path, [f(x) for x in path], color="red", marker="o", label="Hill Climbing Path")
     plt.xlabel("x")
     plt.ylabel("f(x)")
     plt.title("Hill Climbing Algorithm Visualization")

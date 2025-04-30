@@ -2,11 +2,10 @@ def number_guessing_ai():
     print("Think of a number between 1 and 100.")
     print("I will try to guess it!")
 
-    low = 1
-    high = 100
+    low, high = 1, 100
     tries = 0
 
-    while True:
+    while low <= high:
         guess = (low + high) // 2
         tries += 1
 
@@ -22,5 +21,9 @@ def number_guessing_ai():
             high = guess - 1
         else:
             print("Please type exactly: 'higher', 'lower', or 'correct'.")
+
+    if low > high:
+        print("Hmm, something doesn't seem right. Let's try again.")
+
 
 number_guessing_ai()

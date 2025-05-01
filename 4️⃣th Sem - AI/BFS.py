@@ -19,4 +19,6 @@ def bfs(start):
             queue.extend(graph[node])
 
 
-bfs(int(input("Starting Point: ")))
+start = int(input("Starting Point: "))
+print("BFS Traversal: ", end="")
+bfs(start)

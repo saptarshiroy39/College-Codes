@@ -12,7 +12,7 @@ arr = list(map(int, input("Enter numbers: ").split()))
 
 print("Original array:", arr)
 
-for _ in range(len(arr)):
+for _ in range(len(arr) - 1):
     custom_sort(arr)
 
 print("Sorted array:", arr)

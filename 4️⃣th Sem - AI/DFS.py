@@ -19,4 +19,6 @@ def dfs(start):
             stack.extend(reversed(graph[node]))
 
 
-dfs(int(input("Starting Point: ")))
+start = int(input("Starting Point: "))
+print("DFS Traversal: ", end="")
+dfs(start)

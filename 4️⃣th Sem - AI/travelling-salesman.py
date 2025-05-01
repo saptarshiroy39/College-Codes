@@ -1,85 +1,74 @@
 import random
 
-# Parameters
-POP_SIZE = 50
-GENERATIONS = 200
-MUTATION_RATE = 0.02
 
-
-# Get distance matrix from user
-def get_distance_matrix():
+def take_input():
     n = int(input("Enter number of cities: "))
-    print(f"Enter {n} rows of {n} distances (e.g., '0 10 15'):")
-    matrix = []
-    for i in range(n):
-        row = list(map(int, input(f"City {i}: ").split()))
-        matrix.append(row)
-    return matrix
+    print("Enter cost matrix row by row:")
+    cost = [list(map(int, input().split())) for _ in range(n)]
+    start = int(input(f"Enter starting city index (0 to {n-1}): "))
+    return cost, start
 
 
-# Calculate route distance
-def route_distance(route, dist_matrix):
-    total = 0
-    for i in range(len(route) - 1):
-        total += dist_matrix[route[i]][route[i + 1]]
-    total += dist_matrix[route[-1]][route[0]]  # Return to start
-    return total
+def total_cost(tour, cost):
+    return (sum(cost[tour[i]][tour[i + 1]] for i in range(len(tour) - 1)) + cost[tour[-1]][tour[0]])
 
 
-# Create random route
-def create_route(n):
-    route = list(range(n))
-    random.shuffle(route)
-    return route
+def fitness(tour, cost):
+    return 1 / total_cost(tour, cost)
 
 
-# Crossover (ordered crossover)
-def crossover(p1, p2):
-    start, end = sorted(random.sample(range(len(p1)), 2))
-    child = [-1] * len(p1)
-    child[start:end] = p1[start:end]
-    remaining = [x for x in p2 if x not in child[start:end]]
-    for i in range(len(p1)):
-        if child[i] == -1:
-            child[i] = remaining.pop(0)
-    return child
+def initial_population(size, n, start):
+    pop = []
+    nodes = list(range(n))
+    nodes.remove(start)
+    for _ in range(size):
+        tour = [start] + random.sample(nodes, len(nodes))
+        pop.append(tour)
+    return pop
 
 
-# Mutation (swap two cities)
-def mutate(route):
-    if random.random() < MUTATION_RATE:
-        i, j = random.sample(range(len(route)), 2)
-        route[i], route[j] = route[j], route[i]
-    return route
+def crossover(p1, p2, start):
+    p1, p2 = p1[1:], p2[1:]
+    a, b = sorted(random.sample(range(len(p1)), 2))
+    child = [None] * len(p1)
+    child[a : b + 1] = p1[a : b + 1]
+    pos = (b + 1) % len(p1)
+    for c in p2:
+        if c not in child:
+            while child[pos] is not None:
+                pos = (pos + 1) % len(p1)
+            child[pos] = c
+    return [start] + child
 
 
-# Genetic Algorithm
-def solve_tsp(dist_matrix):
-    n = len(dist_matrix)
-    population = [create_route(n) for _ in range(POP_SIZE)]
-
-    for gen in range(GENERATIONS):
-        population.sort(key=lambda x: route_distance(x, dist_matrix))
-        new_pop = [population[0]]  # Keep best
-
-        while len(new_pop) < POP_SIZE:
-            p1, p2 = random.choices(population[:10], k=2)  # Pick from top 10
-            child = crossover(p1, p2)
-            new_pop.append(mutate(child))
-
-        population = new_pop
-        if gen % 50 == 0:
-            print(f"Gen {gen}: Distance = {route_distance(population[0], dist_matrix)}")
-
-    best_route = population[0]
-    return best_route, route_distance(best_route, dist_matrix)
+def mutate(tour, rate=0.02):
+    if random.random() < rate:
+        i, j = random.sample(range(1, len(tour)), 2)
+        tour[i], tour[j]= tour[j], tour[i]
+    return tour
 
 
-# Run it
-dist_matrix = get_distance_matrix()
-print("\nDistance Matrix:")
-for row in dist_matrix:
-    print(row)
-best_route, best_dist = solve_tsp(dist_matrix)
-print(f"\nBest Route: {best_route}")
-print(f"Best Distance: {best_dist}")
+def select(pop, cost):
+    return max(random.sample(pop, 3), key=lambda x: fitness(x, cost))
+
+
+def genetic_algo(cost, start, pop_size=100, gen=500):
+    n = len(cost)
+    pop = initial_population(pop_size, n, start)
+    best = min(pop, key=lambda x: total_cost(x, cost))
+    for _ in range(gen):
+        pop.sort(key=lambda x: fitness(x, cost), reverse=True)
+        if total_cost(pop[0], cost) < total_cost(best, cost):
+            best = pop[0]
+        new_pop = []
+        for _ in range(pop_size // 2):
+            p1, p2 = select(pop, cost), select(pop, cost)
+            new_pop.extend([mutate(crossover(p1, p2, start)), mutate(crossover(p2, p1, start))])
+        pop = new_pop
+    return best + [start], total_cost(best, cost)
+
+
+cost_matrix, start_city = take_input()
+path, min_cost = genetic_algo(cost_matrix, start_city)
+print("\nBest path:", path)
+print("Minimum cost:", min_cost)

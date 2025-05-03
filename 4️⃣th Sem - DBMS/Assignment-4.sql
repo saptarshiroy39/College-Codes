@@ -273,9 +273,13 @@ WHERE RATING > ANY (
 );
 
 -- Find average age of sailors with rating 10
-SELECT AVG(AGE) AS AVERAGE_AGE
+SELECT *
 FROM Sailor_1431
-WHERE RATING = 10;
+WHERE RATING > (
+    SELECT MAX(rating)
+    FROM Sailor_1431
+    WHERE SNAME = 'Horatio'
+);
 
 -- Find the names of the sailors who are older than the oldest sailor of rating = 10
 SELECT SNAME
@@ -294,7 +298,8 @@ GROUP BY RATING;
 -- Find the name of each sailor who is eligible to vote for each rating level
 SELECT RATING, SNAME
 FROM Sailor_1431
-WHERE AGE >= 18;
+WHERE AGE >= 18
+GROUP BY RATING;
 
 -- Find the average age of sailor for each rating level with at least two such sailors
 SELECT RATING, AVG(AGE) AS AVERAGE_AGE

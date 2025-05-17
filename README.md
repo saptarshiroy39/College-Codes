@@ -44,18 +44,6 @@ College-Codes/
 
 ---
 
-## 🚀 How to Use
-
-### **[1️] Clone the Repository**
-```sh
-git clone https://github.com/yourusername/College-Codes.git
-```
-
-### **[2️] Navigate to the Desired Semester Folder**
-```sh
-cd College-Codes/4th-Sem_AI
-```
-
 ### **[3️] Open and Run the Code in Your Preferred IDE or Compiler**
 - **C & C++** → VS Code, GCC, Dev-C++
 - **Python** → Python 3.x (Jupyter Notebook, PyCharm, Google Colab, VS Code)

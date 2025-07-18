@@ -44,7 +44,7 @@ College-Codes/
 
 ---
 
-### **[3️] Open and Run the Code in Your Preferred IDE or Compiler**
+### **🕹️ Open and Run the Code in Your Preferred IDE or Compiler**
 - **C & C++** → VS Code, GCC, Dev-C++
 - **Python** → Python 3.x (Jupyter Notebook, PyCharm, Google Colab, VS Code)
 - **VHDL** → Xilinx

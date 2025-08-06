@@ -1,0 +1,5 @@
+This project uses "MS Project 2007" for project management activities.
+
+All Software Engineering documents and diagrams follow standard UML notation and project management methodologies.
+
+Please ensure that you are using appropriate UML modeling tools and MS Project or compatible software for viewing and editing the project management files.

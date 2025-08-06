@@ -1,0 +1,5 @@
+This project uses "Xilinx ISE" for VHDL/Verilog development and simulation.
+
+All hardware description files and simulations are written specifically for "Xilinx FPGA" compatibility.
+
+Please ensure that you are using "Xilinx ISE Design Suite" or a compatible environment for proper synthesis and simulation of the hardware description code.

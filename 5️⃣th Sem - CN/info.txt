@@ -1,0 +1,5 @@
+All network simulations are designed specifically for "Cisco Packet Tracer" compatibility.
+
+Please ensure that you are using "Cisco Packet Tracer" or a compatible network simulation environment for proper execution of the network topology files.
+
+Some programming assignments may also use Wireshark for packet analysis and network protocol examination.

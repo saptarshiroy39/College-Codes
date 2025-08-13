@@ -2,14 +2,6 @@
 
 This repository contains programming and subject-related codes organized by semester. It is a collection of essential coding exercises, assignments, and study material for various computer science subjects across multiple programming languages and platforms.
 
-## 🎯 Purpose
-
-This repository serves as:
-- A learning resource for computer science students
-- A reference for common algorithms and data structures implementations
-- A showcase of programming concepts across different languages and paradigms
-- A personal archive of academic work organized by semester
-
 ---
 
 ## 📂 Folder Structure
@@ -62,37 +54,8 @@ College-Codes/
 
 ---
 
-## 📚 Key Topics Covered
+## 🕹️ Development Environments & Tools Required
 
-### **1️⃣st Semester - C Programming**
-- Basic syntax and control structures
-- Arrays and strings
-- Functions and recursion
-- Pointers and memory management
-- File handling
-
-### **2️⃣nd Semester**
-- **Data Structures**: Stacks, queues, linked lists, trees, sorting algorithms
-- **Computer Organization**: Digital logic design, boolean algebra, circuit design
-- **Signals & Systems**: Signal processing, transforms, convolution
-
-### **3️⃣rd Semester**
-- **Algorithms I**: Time complexity, divide & conquer, dynamic programming
-- **Computer Architecture**: VHDL, processor design, memory systems
-- **OOP**: Classes, inheritance, polymorphism, encapsulation
-
-### **4️⃣th Semester**
-- **AI**: Search algorithms, knowledge representation, expert systems
-- **Algorithms II**: Advanced graph algorithms, optimization techniques
-- **DBMS**: SQL, database design, normalization, transactions
-- **OS**: Process management, memory allocation, file systems
-
-### **5️⃣th Semester**
-- **Computer Networks**: Network protocols, topology design, packet switching
-- **Machine Learning**: Data analysis, regression, classification algorithms
-- **Software Engineering**: Project planning, SDLC, requirement analysis
-
-### **🕹️ Open and Run the Code in Your Preferred IDE or Compiler**
 - **C & C++** → VS Code, GCC, Dev-C++
 - **Python** → Python 3.x (Jupyter Notebook, PyCharm, Google Colab, VS Code)
 - **VHDL** → Xilinx ISE Design Suite
@@ -105,10 +68,6 @@ College-Codes/
 - **MS Project** → MS Project 2007 or later for project management files (.mpp)
 
 ---
-
-## 📄 License
-
-This repository is primarily for educational purposes. Feel free to use the code for learning, but please provide attribution if using substantial portions in your own projects.
 
 ## ⭐ Support  
 

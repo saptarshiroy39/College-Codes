@@ -21,7 +21,7 @@ College-Codes/
 │── 4️⃣th Sem - OS
 │── 5️⃣th Sem - CN
 │── 5️⃣th Sem - ML
-│── 5️⃣th Sem - SE
+│── 5️⃣th Sem - SWE
 ```
 
 ---
@@ -50,7 +50,7 @@ College-Codes/
 ### **5️⃣th Semester**
 - **Computer Networks (CN)** [Shell, Cisco Packet Tracer]
 - **Machine Learning (ML)** [Python, Jupyter Notebook]
-- **Software Engineering (SE)** [MS Project]
+- **Software Engineering (SWE)** [MS Project]
 
 ---
 

@@ -1,6 +1,6 @@
 # 📚 College-Codes
 
-This repository contains programming and subject-related codes organized by semester. It is a collection of essential coding exercises, assignments, and study material for various computer science subjects across multiple programming languages and platforms.
+This repository contains programming and subject-related codes organized by semester.
 
 ---
 
@@ -23,49 +23,6 @@ College-Codes/
 │── 5️⃣th Sem - ML
 │── 5️⃣th Sem - SWE
 ```
-
----
-
-## 📌 Subjects & Languages Covered
-
-### **1️⃣st Semester**
-- **C Programming** [C]
-
-### **2️⃣nd Semester**
-- **Computer Organization (C.Org)** [Logic.ly]
-- **Data Structures (DS)** [C]
-- **Signals & Systems (SS)** [Scilab]
-
-### **3️⃣rd Semester**
-- **Algorithm I (Algo.1)** [C++]
-- **Computer Architecture (C.Arch)** [VHDL]
-- **Object-Oriented Programming (OOP)** [C++]
-
-### **4️⃣th Semester**
-- **Artificial Intelligence (AI)** [Python, Prolog]
-- **Algorithm II (Algo.2)** [C++]
-- **Database Management Systems (DBMS)** [SQL]
-- **Operating Systems (OS)** [ShellScript]
-
-### **5️⃣th Semester**
-- **Computer Networks (CN)** [Shell, Cisco Packet Tracer]
-- **Machine Learning (ML)** [Python, Jupyter Notebook]
-- **Software Engineering (SWE)** [MS Project]
-
----
-
-## 🕹️ Development Environments & Tools Required
-
-- **C & C++** → VS Code, GCC, Dev-C++
-- **Python** → Python 3.x (Jupyter Notebook, PyCharm, Google Colab, VS Code)
-- **VHDL** → Xilinx ISE Design Suite
-- **SQL** → Oracle 10g Express Edition
-- **Shell Script** → Bash Terminal (Git Bash)
-- **Scilab** → Scilab IDE
-- **Logic.ly** → Browser-based digital logic simulator
-- **Prolog** → SWI-Prolog
-- **Cisco Packet Tracer** → .pkt files for network simulations
-- **MS Project** → MS Project 2007 or later for project management files (.mpp)
 
 ---
 

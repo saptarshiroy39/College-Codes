@@ -9,7 +9,6 @@ This repository contains programming and subject-related codes organized by seme
 ```
 College-Codes/
 │── 1️⃣st Sem - C
-│── 2️⃣nd Sem - C.Org
 │── 2️⃣nd Sem - DS
 │── 2️⃣nd Sem - SS
 │── 3️⃣rd Sem - Algo.1
@@ -29,7 +28,4 @@ College-Codes/
 ## ⭐ Support  
 
 If you find this project useful, please consider giving it a **star** ⭐ on this Repo. & following me!  
-It really helps me and motivates me to keep working on this! 😃  
-
-[![GitHub stars](https://img.shields.io/github/stars/saptarshiroy39/College-Codes.svg?style=social&label=Star)](https://github.com/saptarshiroy39/College-Codes)
-[![GitHub followers](https://img.shields.io/github/followers/saptarshiroy39.svg?style=social&label=Follow)](https://github.com/saptarshiroy39)
+It really helps me and motivates me to keep working on this! 😃

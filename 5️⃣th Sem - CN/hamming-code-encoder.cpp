@@ -31,8 +31,10 @@ int main()
   // Fill data bits in reverse
   int j = 0;
   for (int i = len + r; i >= 1; i--)
+  {
     if (codeword[i] != -1)
       codeword[i] = bits[j++];
+  }
 
   // Calculate parity bits
   for (int i = 0; i < r; i++)
@@ -40,8 +42,11 @@ int main()
     int pos = pow(2, i);
     int count = 0;
     for (int j = pos; j <= len + r; j++)
+    {
       if (((j >> i) & 1) && codeword[j] != -1)
         count += codeword[j];
+    }
+
     codeword[pos] = count % 2;
   }
 

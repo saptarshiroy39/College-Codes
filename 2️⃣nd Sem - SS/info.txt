@@ -1,5 +1,0 @@
-This folder contains Signal Systems (SS) laboratory programs implemented in Scilab.
-
-All scripts (.sce files) are written specifically for "Scilab" compatibility.
-
-Please ensure that you are using "Scilab" or a compatible environment for proper execution of these scripts. Most scripts demonstrate signal processing concepts such as convolution, signal transformations, and various signal types.

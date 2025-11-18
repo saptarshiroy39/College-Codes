@@ -17,16 +17,23 @@ int main()
   for (int i = 0; i < n; i++)
     cout << code[i] << " ";
 
-  int r = 0, error = 0;
+  int r = 0;
+  int error = 0;
   while (pow(2, r) < n)
+  {
     r++;
+  }
 
   for (int i = 0; i < r; i++)
   {
-    int pos = pow(2, i), count = 0;
+    int pos = pow(2, i);
+    int count = 0;
+
     for (int j = pos; j <= n; j++)
+    {
       if ((j & pos) && code[n - j] == 1)
         count++;
+    }
     if (count % 2)
       error += pos;
   }
@@ -40,8 +47,10 @@ int main()
       cout << code[i] << " ";
   }
   else
+  {
     cout << "\nNo error detected.";
-
+  }
   cout << "\n";
+
   return 0;
 }

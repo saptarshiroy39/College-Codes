@@ -1,5 +1,0 @@
-This project uses "Oracle 10g Express Edition".
-
-All SQL scripts and queries are written specifically for "Oracle 10g XE" compatibility.
-
-Please ensure that you are using "Oracle 10g Express" or a compatible environment for proper execution of the SQL code.

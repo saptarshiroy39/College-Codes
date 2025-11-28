@@ -24,8 +24,3 @@ College-Codes/
 ```
 
 ---
-
-## ⭐ Support  
-
-If you find this project useful, please consider giving it a **star** ⭐ on this Repo. & following me!  
-It really helps me and motivates me to keep working on this! 😃

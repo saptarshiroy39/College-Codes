@@ -22,5 +22,3 @@ College-Codes/
 │── 5️⃣th Sem - ML
 │── 5️⃣th Sem - SWE
 ```
-
----

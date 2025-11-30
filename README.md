@@ -1,9 +1,3 @@
-# 📚 College-Codes
-
-This repository contains programming and subject-related codes organized by semester.
-
----
-
 ## 📂 Folder Structure
 
 ```
@@ -21,4 +15,5 @@ College-Codes/
 │── 5️⃣th Sem - CN
 │── 5️⃣th Sem - ML
 │── 5️⃣th Sem - SWE
+
 ```

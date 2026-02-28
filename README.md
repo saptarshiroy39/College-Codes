@@ -22,5 +22,6 @@ College-Codes/
 │── 5️⃣th Sem ➔ SWE/
 |
 │── 6️⃣th Sem ➔ DS/
+│── 6️⃣th Sem ➔ CNS/
 
 ```
